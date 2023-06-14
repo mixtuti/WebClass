@@ -10,32 +10,79 @@
         <div id="0614">
             <h1>6月14日</h1><br>
             <hr>
-            <li><a href="0614.html#info">今後の授業資料</a></li>
-            <li><a href="0614.html#">テキストを画面に表示する</a></li>
+            <ul>
+                <li><a href="0614.html#info" class="nolink">今後の授業資料</a></li>
+                <li><a href="0614.html#img" class="nolink">画像表示</a></li>
+                <li><a href="0614.html#img-size" class="nolink">画像サイズの変更</a></li>
+                <li><a href="0614.html#a" class="nolink">aタグを使ってリンクさせる</a></li>
+                <li><a href="0614.html#tab" class="nolink">別タブで開くようにする</a></li>
+            </ul>
         </div>
-
-        
         <hr>
-        <a name="text"></a>
-        <h2>テキストを画面に表示する</h2>
+
+        <a name="info"></a>
+        <h2>今後の授業資料</h2>
+        <h4>▼授業資料閲覧用QRコード</h4>
+        <p>どちらからでもいいのでアクセスして確認しておいてください。</p>
+        <img src="../portfolio/img/QR_701352.png" alt="QRコード"><br>
+        <h3>https://mixtuti.github.io/Webclass/</h3>
+
+        <hr>
+        <a name="img"></a>
+        <h2>画像表示</h2>
         <h4>▼コード</h4>
         <pre>
             <code>
-                &lt;!doctype html&gt;
-                &lt;html&gt;
-                    &lt;head&gt;
-                        &lt;title&gt;ポートフォリオ&lt;/title&gt;
-                    &lt;/head&gt;
-                    &lt;body&gt;
-                        Hello, World
-                    &lt;/body&gt;
-                &lt;/html&gt;
+                &lt;img src="画像パス・ファイル名" alt="画像説明"&gt;
+            </code>
+        </pre>
+        <h4>▼上記QRコードの場合はこうなる</h4>
+        <pre>
+            <code>
+                &lt;img src="../portfolio/img/QR_701352.png" alt="QRコード"&gt;
             </code>
         </pre>
         <h4>▼htmlの見た目</h4>
-        Hello, World
+        <img src="../portfolio/img/QR_701352.png" alt="QRコード">
         <hr>
 
-        
+        <a name="img-size"></a>
+        <h2>画像サイズの変更</h2>
+        <h4>▼コード</h4>
+        <pre>
+            <code>
+                &lt;img src="画像パス・ファイル名" alt="画像説明" width="500" height="500"&gt;
+            </code>
+        </pre>
+        <p>widthは幅、heightは高さを表す。%表記やauto,vwなど色々可能</p>
+        <h4>▼htmlの見た目</h4>
+        <img src="../portfolio/img/QR_701352.png" alt="QRコード" width="500" height="500">
+        <hr>
+
+        <a name="a"></a>
+        <h2>aタグを使ってリンクさせる</h2>
+        <h4>▼コード</h4>
+        <pre>
+            <code>
+                &lt;a href="URLなど"&gt;テキストや画像&lt;/a&gt;
+            </code>
+        </pre>
+        <h4>▼htmlの見た目</h4>
+        <a href="https://mixtuti.github.io/Webclass/">授業資料</a>
+        <hr>
+
+        <a name="tab"></a>
+        <h2>別タブで開くようにする</h2>
+        <h4>▼コード</h4>
+        <pre>
+            <code>
+                &lt;a href="URLなど" target="_blank"&gt;テキストや画像&lt;/a&gt;
+            </code>
+        </pre>
+        <p>target属性はほかにもある。</p>
+        <h4>▼htmlの見た目</h4>
+        <a href="https://mixtuti.github.io/Webclass/" target="_blank">授業資料</a>
+        <p>見た目自体に変化はない</p>
+        <hr>
     </body>
 </html>

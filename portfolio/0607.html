@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <title>ポートフォリオを作成しよう！！</title>
+        <meta charset="UTF-8">
+        <link href="../portfolio/css/style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <a name="0607"></a>
+        <div id="0607">
+            <h2>6月7日の振り返り</h2><br>
+            <hr>
+            <li><a href="index.html#text">テキストを画面に表示する</a></li>
+            <li><a href="index.html#div">divを使って画面配置する</a></li>
+            <li><a href="index.html#flex">横並びに配置する</a></li>
+            <li><a href="index.html#info">自己紹介を書く</a></li>
+            <li><a href="index.html#br">改行する</a></li>
+            <li><a href="index.html#h">タイトルの文字を大きくする</a></li>
+        </div>
+
+        <hr>
+        <a name="text"></a>
+        <h3>テキストを画面に表示する</h3>
+        <h4>▼コード</h4>
+        <pre>
+            <code>
+                &lt;!doctype html&gt;
+                &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;title&gt;ポートフォリオ&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        Hello, World
+                    &lt;/body&gt;
+                &lt;/html&gt;
+            </code>
+        </pre>
+        <h4>▼htmlの見た目</h4>
+        Hello, World
+        <hr>
+
+        <a name="div"></a>
+        <h3>divを使って画面配置する</h3>
+        <h4>▼コード</h4>
+        <pre>
+            <code>
+                &lt;!doctype html&gt;
+                &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;title&gt;ポートフォリオ&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;div id="blue" style="background-color: blue;"&gt;
+                            Hello, World
+                        &lt;/div&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;
+            </code>
+        </pre>
+        <h4>▼htmlの見た目</h4>
+        <div id="blue" style="background-color: blue;">
+            Hello, World
+        </div>
+        <hr>
+
+        <a name="flex"></a>
+        <h3>横並びに配置する</h3>
+        <h4>▼コード</h4>
+        <pre>
+            <code>
+                &lt;!doctype html&gt;
+                &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;title&gt;ポートフォリオ&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;div id="box" style="display: flex;"&gt;
+                            &lt;div id="blue" style="background-color: blue;"&gt;
+                                Hello, World
+                            &lt;/div&gt;
+                            &lt;div id="red" style="background-color: red;"&gt;
+                                こんにちは、世界
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;
+            </code>
+        </pre>
+        <h4>▼htmlの見た目</h4>
+        <div id="box" style="display: flex;">
+            <div id="blue" style="background-color: blue;">
+                Hello, World
+            </div>
+            <div id="red" style="background-color: red;">
+                こんにちは、世界
+            </div>
+        </div>
+        <hr>
+
+        <a name="info"></a>
+        <h3>自己紹介を書く</h3>
+
+        各自で自己紹介を書いていってください。
+        <hr>
+
+        <a name="br"></a>
+        <h3>改行する</h3>
+        <h4>▼コード</h4>
+        <pre>
+            <code>
+                自己紹介
+                名前
+            </code>
+        </pre>
+        コード上でこのように改行しても、HTML上では反映されない。そこで&lt;br&gt;を使う。
+        <h4>▼htmlの見た目</h4>
+        自己紹介
+        名前
+        <br>
+        <pre>
+            <code>
+                自己紹介&lt;br&gt;
+                名前
+            </code>
+        </pre>
+        <h4>▼htmlの見た目</h4>
+        自己紹介<br>
+        名前
+        <hr>
+
+        <a name="h"></a>
+        <h3>タイトルの文字を大きくする</h3>
+        <h4>▼コード</h4>
+        <pre>
+            <code>
+                &lt;h1&gt;こんにちは、世界&lt;/h1&gt;
+                &lt;h2&gt;こんにちは、世界&lt;/h2&gt;
+                &lt;h3&gt;こんにちは、世界&lt;/h3&gt;
+                &lt;h4&gt;こんにちは、世界&lt;/h4&gt;
+                &lt;h5&gt;こんにちは、世界&lt;/h5&gt;
+                &lt;h6&gt;こんにちは、世界&lt;/h6&gt;
+            </code>
+        </pre>
+        デフォルトでh1~h6まである。
+        <h4>▼htmlの見た目</h4>
+        <h1>こんにちは、世界</h1>
+        <h2>こんにちは、世界</h2>
+        <h3>こんにちは、世界</h3>
+        <h4>こんにちは、世界</h4>
+        <h5>こんにちは、世界</h5>
+        <h6>こんにちは、世界</h6>
+    </body>
+</html>

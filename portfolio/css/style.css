@@ -1,0 +1,11 @@
+pre {
+    margin: 1em 0; /* ブロック前後の余白 */
+    padding: 1em; /* ブロック内の余白 */
+    border-radius: 5px; /* 角丸 */
+    background: #d8d8d8; /* 背景色 */
+    white-space: pre-wrap; /* はみ出たときに折り返す */
+}
+a {
+    text-decoration: none;
+    color: #000000;+
+}

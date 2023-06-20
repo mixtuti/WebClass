@@ -5,6 +5,11 @@
         <meta charset="UTF-8">
         <link href="../portfolio/css/style.css" rel="stylesheet" type="text/css">
         <link href="../portfolio/css/style0621.css" rel="stylesheet" type="text/css">
+        <!-- Start Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" rel="stylesheet">
+        <!-- End Google Fonts -->
     </head>
     <body>
         <a name="0621"></a>
@@ -13,10 +18,14 @@
             <hr>
             <ul>
                 <li><a href="0621.html#info" class="nolink">今後の授業資料</a></li>
+                <li><a href="0621.html#indent" class="nolink">字下げする</a></li>
                 <li><a href="0621.html#text" class="nolink">テキストを装飾する</a></li>
                 <li><a href="0621.html#css" class="nolink">CSSでデザインを調整する</a></li>
                 <li><a href="0621.html#nav" class="nolink">ナビゲーションを作る</a></li>
                 <li><a href="0621.html#title" class="nolink">CSSを使って更に文字を装飾する(作例付き)</a></li>
+                <li><a href="0621.html#font" class="nolink">フォントを変更してみる</a></li>
+                <li><a href="0621.html#more-font" class="nolink">もっと沢山のフォントを見てみる</a></li>
+                <li><a href="0621.html#block" class="nolink">サイトをレイアウトする</a></li>
             </ul>
         </div>
         <hr>
@@ -92,6 +101,18 @@
         <p style="color: red;">赤色テキスト</p>
         <hr>
 
+        <a name="indent"></a>
+        <h2>字下げする</h2>
+        <h4>▼コード</h4>
+        <pre>
+            <code>
+                &lt;p style="text-indent: 1rem;"&gt;段落1行目&lt;br&gt;段落2行目&lt;br&gt;段落3行目&lt;/p&gt;
+            </code>
+        </pre>
+        <h4>▼htmlの見た目</h4>
+        <p style="text-indent: 1rem;">段落1行目<br>段落2行目<br>段落3行目</p>
+
+        <hr>
         <a name="css"></a>
         <h2>CSSでデザインを調整する</h2>
         <p>CSSを活用すると、HTML内にある関連箇所をいちいち直さなくても、一括して変更可能になります。</p>
@@ -352,10 +373,48 @@
                 }
             </code>
         </pre>
-        <p>border-bottomをdashedに変えると破線になる。</p>
+        <p>border-bottomをdashedに変えると破線になる。その他にも、「groove」、「ridge」、「inset」、「outset」、「dotted」等ある。</p>
         <p class="Dashed">見出しの作例</p>
 
-        <h1 class="number-title"><span class="number t_normal">3</span>角丸に白抜き文字</h1>
+        <h1 class="number-title"><span class="number t_normal">3</span>両側に線</h1>
+        <h4>▼htmlの見た目</h4>
+        <p class="Double-Line"><span>見出しの作例</span></p>
+        <p>これは、HTMLも少し書き換える必要がある。</p>
+        <pre>
+            <code>
+                &lt;p class="sample"&gt;&lt;span&gt;見出しの作例&lt;/span&gt;&lt;/p&gt;
+            </code>
+        </pre>
+        <h4>▼コード(CSS)</h4>
+        <pre>
+            <code>
+                .sample {
+                    font-size: 1.5em;/* フォントサイズ */
+                    font-weight: bold;/* フォント太さ */
+                    padding: 0 65px;
+                    position: relative;
+                    text-align: center;/* テキスト中央寄せ */
+                }
+                
+                .sample:before {
+                    position: absolute;
+                    top: calc(50% - 1px);
+                    left: 0;
+                    width: 100%;
+                    height: 2px;
+                    content: '';
+                    background: #000;
+                }
+                
+                .sample span {
+                    position: relative;
+                    padding: 0 1em;
+                    background: #fff;
+                }
+            </code>
+        </pre>
+
+        <h1 class="number-title"><span class="number t_normal">4</span>角丸に白抜き文字</h1>
         <p class="Kadomaru">見出しの作例</p>
         <h4>▼コード(CSS)</h4>
         <pre>
@@ -374,7 +433,25 @@
             </code>
         </pre>
 
-        <h1 class="number-title"><span class="number t_normal">4</span>付箋風な感じ</h1>
+        <h1 class="number-title"><span class="number t_normal">5</span>背景のグラデーション</h1>
+        <h4>▼htmlの見た目</h4>
+        <p class="Gradation">見出しの作例</p>
+        <h4>▼コード(CSS)</h4>
+        <pre>
+            <code>
+                .sample {
+                    font-size: 1.5em;/* フォントサイズ */
+                    font-weight: bold;/* フォント太さ */
+                    padding-top: .5em;
+                    padding-bottom: .5em;
+                    padding-left: 1rem;
+                    margin-bottom: 2em;
+                    background-image: linear-gradient(to right, #209cff 0%, #68e0cf 100%);
+                }
+            </code>
+        </pre>
+
+        <h1 class="number-title"><span class="number t_normal">6</span>付箋風な感じ</h1>
         <p class="Husen">見出しの作例</p>
         <h4>▼コード(CSS)</h4>
         <pre>
@@ -392,7 +469,7 @@
             </code>
         </pre>
 
-        <h1 class="number-title"><span class="number t_normal">5</span>吹き出し</h1>
+        <h1 class="number-title"><span class="number t_normal">7</span>吹き出し</h1>
         <p class="Hukidashi">見出しの作例</p>
         <h4>▼コード(CSS)</h4>
         <pre>
@@ -419,7 +496,7 @@
             </code>
         </pre>
 
-        <h1 class="number-title"><span class="number t_normal">6</span>ステッチ風</h1>
+        <h1 class="number-title"><span class="number t_normal">8</span>ステッチ風</h1>
         <p class="Stitch">見出しの作例</p>
         <pre>
             <code>
@@ -447,5 +524,242 @@
                 }
             </code>
         </pre>
+
+        <h1 class="number-title"><span class="number t_normal">9</span>リボン風</h1>
+        <p class="Ribbon"><span>見出しの作例</span></p>
+        <p>こちらの、HTMLもspanタグが必要。</p>
+        <pre>
+            <code>
+                .sample {
+                    font-size: 1.5em;/* フォントサイズ */
+                    font-weight: bold;/* フォント太さ */
+                    position: relative;
+                    margin: 30px;
+                    text-align: center;
+                }
+                
+                .sample:before,
+                .sample:after {
+                    position: absolute;
+                    z-index: 0;/* 画像表示順を調整 */
+                    bottom: -5px;
+                    display: block;
+                    content: '';
+                    border: 1em solid #0669d9;
+                }
+                
+                .sample:before {
+                    left: -30px;
+                    border-left-width: 15px;
+                    border-left-color: transparent;
+                }
+                  
+                .sample:after {
+                    right: -30px;
+                    border-right-width: 15px;
+                    border-right-color: transparent;
+                }
+                
+                .sample span {
+                    position: relative;
+                    z-index: 1;
+                    display: block;
+                    padding: 1rem 2rem;
+                    color: #fff;
+                    background: #1b98f8;
+                }
+            </code>
+        </pre>
+        <hr>
+
+        <a name="font"></a>
+        <h2>フォントを変更してみる。</h2>
+        <h4>▼コード</h4>
+        <pre>
+            <code>
+                &lt;font face=”フォント名”&gt;ここに文章。Text here.&lt;/font&gt;
+            </code>
+        </pre>
+        <table border="1" style="width: 50%;">
+            <tr>
+                <th>フォント名</th>
+                <th>見た目</th>
+            </tr>
+            <tr>
+                <td>ＭＳ Ｐ明朝</td>
+                <td><font face="ＭＳ Ｐ明朝">ここに文章。Text here.</font></td>
+            </tr>
+            <tr>
+                <td>arial black</td>
+                <td><font face="arial black">ここに文章。Text here.</font></td>
+            </tr>
+            <tr>
+                <td>Comic Sans MS</td>
+                <td><font face="Comic Sans MS">ここに文章。Text here.</font></td>
+            </tr>
+            <tr>
+                <td>Script</td>
+                <td><font face="Script">ここに文章。Text here.</font></td>
+            </tr>
+            <tr>
+                <td>fantasy</td>
+                <td><font face="fantasy">ここに文章。Text here.</font></td>
+            </tr>
+            <tr>
+                <td>Times New Roman</td>
+                <td><font face="Times New Roman">ここに文章。Text here.</font></td>
+            </tr>
+        </table>
+        <hr>
+
+        <a name="more-font"></a>
+        <h2>もっと沢山のフォントを見てみる</h2>
+        <p>Google Fontというのを利用して、更にフォントを見てみる。</p>
+        <img src="../portfolio/img/font.png" style="width: 50%;">
+        <p><a href="https://fonts.google.com/" target="_blank">https://fonts.google.com/</a>にアクセスして下さい。</p>
+        <p>好きなフォントを選択してください。</p>
+        <img src="../portfolio/img/font2.png" width="50%">
+        <p>選択すると上記画像のようになるので、セレクトの部分をクリック</p>
+        <img src="../portfolio/img/font3.png" width="50%">
+        <p>Use on the webの所から、コピーします。</p>
+        <p>head要素の中に先程コピーした物をペーストします。</p>
+        <pre>
+            <code>
+                &lt;head&gt;
+                    &lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+                    &lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
+                    &lt;link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" rel="stylesheet"&gt;
+                &lt;/head&gt;
+            </code>
+        </pre>
+        <p>次にCSS用の物もコピーします。</p>
+        <pre>
+            <code>
+                .Zen-Kurenaido{ /*分かりやすくするためフォント名にするのが無難 */
+                    font-family: 'Zen Kurenaido', sans-serif;
+                }
+            </code>
+        </pre>
+        <p>変えるにはクラス名に先ほど登録した名前を書くだけでできる。</p>
+        <p class="Kadomaru">見出しの作例</p>
+        <p class="Kadomaru Zen-Kurenaido">見出しの作例</p>
+        <p>タイトルなどの要所要所に入れるのがいいかも</p>
+        <hr>
+
+        <a name="block"></a>
+        <h2>サイトをレイアウトする</h2>
+        <h4>▼コード(HTML)</h4>
+        <pre>
+            <code>
+                &lt;header&gt;ヘッダー&lt;/header&gt;
+                &lt;div class="blocka"&gt;
+                    コンテンツA
+                &lt;/div&gt;
+                &lt;div class="blockb"&gt;
+                    コンテンツB
+                &lt;/div&gt;
+                &lt;footer&gt;フッター&lt;/footer&gt;
+            </code>
+        </pre>
+        <h4>▼コード(CSS)</h4>
+        <pre>
+            <code>
+                header {
+                    background: #ff838b;
+                }
+                
+                .blocka {
+                    height: 100px;
+                    background-color: #bbdffa;
+                }
+                
+                .blockb {
+                    height: 100px;
+                    background-color: #bbfaca;
+                }
+                
+                footer {
+                    background: #ffce5b;
+                }
+            </code>
+        </pre>
+        <h4>▼htmlの見た目</h4>
+        <header class="header">ヘッダー</header>
+        <div class="blocka">
+            コンテンツA
+        </div>
+        <div class="blockb">
+            コンテンツB
+        </div>
+        <footer class="footer">フッター</footer>
+        <p>2段組みにしてみよう</p>
+        <h4>▼コード(CSS) .blockaに以下を追加します。</h4>
+        <pre>
+            <code>
+                float: left;
+                width: 60%;/* 好きな数字にしてください。 */
+            </code>
+        </pre>
+        <h4>▼htmlの見た目</h4>
+        <header class="header">ヘッダー</header>
+        <div class="blocka float-left">
+            コンテンツA
+        </div>
+        <div class="blockb">
+            コンテンツB
+        </div>
+        <footer class="footer">フッター</footer>
+
+        <p>display: flex;でも同じことができる。</p>
+        <h4>▼コード(HTML)</h4>
+        <pre>
+            <code>
+                &lt;header class="header"&gt;ヘッダー&lt;/header&gt;
+                &lt;div class="main"&gt;
+                    &lt;div class="blocka" style="width: 60%;"&gt;
+                        コンテンツA
+                    &lt;/div&gt;
+                    &lt;div class="blockb" style="width: 40%;"&gt;
+                        コンテンツB
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;footer class="footer"&gt;フッター&lt;/footer&gt;
+            </code>
+        </pre>
+        <h4>▼コード(CSS)</h4>
+        <pre>
+            <code>
+                .blocka {
+                    width: 60%;
+                    height: 100px;
+                    background-color: #bbdffa;
+                }
+                
+                .blockb {
+                    width: 40%;
+                    height: 100px;
+                    background-color: #bbfaca;
+                }
+                
+                .footer {
+                    background: #ffce5b;
+                }
+                                
+                .main {
+                    display: flex;
+                }
+            </code>
+        </pre>
+        <h4>▼htmlの見た目</h4>
+        <header class="header">ヘッダー</header>
+        <div class="main">
+            <div class="blocka" style="width: 60%;">
+                コンテンツA
+            </div>
+            <div class="blockb" style="width: 40%;">
+                コンテンツB
+            </div>
+        </div>
+        <footer class="footer">フッター</footer>
     </body>
 </html>

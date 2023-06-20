@@ -67,6 +67,40 @@
     color:#1b98f8;/* フォント色 */
 }
 
+.Double-Line {
+    font-size: 1.5em;/* フォントサイズ */
+    font-weight: bold;/* フォント太さ */
+    padding: 0 65px;
+    position: relative;
+    text-align: center;/* テキスト中央寄せ */
+}
+
+.Double-Line:before {
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 0;
+    width: 100%;
+    height: 2px;
+    content: '';
+    background: #000;
+}
+
+.Double-Line span {
+    position: relative;
+    padding: 0 1em;
+    background: #fff;
+}
+
+.Gradation {
+    font-size: 1.5em;/* フォントサイズ */
+    font-weight: bold;/* フォント太さ */
+    padding-top: .5em;
+    padding-bottom: .5em;
+    padding-left: 1rem;
+    margin-bottom: 2em;
+    background-image: linear-gradient(to right, #209cff 0%, #68e0cf 100%);
+}
+
 .Kadomaru {
     font-size: 1.5em;/* フォントサイズ */
     font-weight: bold;/* フォント太さ */
@@ -132,4 +166,96 @@
     border-style: dashed;
     border-color: #fff #fff #1b98f8;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.Ribbon {
+    font-size: 1.5em;/* フォントサイズ */
+    font-weight: bold;/* フォント太さ */
+    position: relative;
+    margin: 30px;
+    text-align: center;
+}
+
+.Ribbon:before,
+.Ribbon:after {
+    position: absolute;
+    z-index: 0;/* 画像表示順を調整 */
+    bottom: -5px;
+    display: block;
+    content: '';
+    border: 1em solid #0669d9;
+}
+
+.Ribbon:before {
+    left: -30px;
+    border-left-width: 15px;
+    border-left-color: transparent;
+}
+  
+.Ribbon:after {
+    right: -30px;
+    border-right-width: 15px;
+    border-right-color: transparent;
+}
+
+.Ribbon span {
+    position: relative;
+    z-index: 1;
+    display: block;
+    padding: 1rem 2rem;
+    color: #fff;
+    background: #1b98f8;
+}
+
+.Ribbon span:before,
+.Ribbon span:after {
+    position: absolute;
+    bottom: -10px;
+    display: block;
+    width: 10px;
+    height: 10px;
+    content: '';
+    border-style: solid;
+    border-color: #1b98f8 transparent transparent transparent;
+}
+
+.Ribbon span:before {
+    left: 0;
+    border-width: 10px 0 0 10px;
+}
+  
+.Ribbon span:after {
+    right: 0;
+    border-width: 10px 10px 0 0;
+}
+
+.Zen-Kurenaido{ /*分かりやすくするためフォント名にするのが無難 */
+    font-family: 'Zen Kurenaido', sans-serif;
+}
+
+.header {
+    background: #ff838b;
+}
+
+.blocka {
+    height: 100px;
+    background-color: #bbdffa;
+}
+
+.blockb {
+    height: 100px;
+    background-color: #bbfaca;
+}
+
+.footer {
+    background: #ffce5b;
+}
+
+.float-left {
+    float: left;
+    width: 60%;
+}
+
+.main {
+    display: flex;
 }

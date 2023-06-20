@@ -76,3 +76,18 @@ textarea.c-form__input {
 		width: 55%;
 	}
 }
+
+.t_normal {
+    background-color: #1b98f8;
+}
+
+.number {
+    padding-left: 0.42em;
+    padding-right: 0.42em;
+    border-radius: 3em;
+    color: #fff;
+}
+
+.number-title {
+	font-size: 2em;
+}

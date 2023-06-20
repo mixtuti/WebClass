@@ -1,0 +1,135 @@
+.blue{
+    background-color: blue;
+}
+
+.nav {
+    width: 100%;
+    height: 70px;
+    background-color: gray;
+}
+
+.ul {
+    display: flex;
+}
+
+.li {
+    list-style: none;
+}
+
+.a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    margin-right: 35px;
+}
+
+.nav-padding {
+    padding-top: 5px;
+    box-sizing: border-box;
+}
+
+.a-hover:hover { /* ホバー時の処理 */
+    color: rgb(0, 174, 255);
+}
+
+.nav-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.Under1{
+    font-size: 1.5em;/* フォントサイズ */
+    font-weight: bold;/* フォント太さ */   
+    padding-top: .5em;
+    padding-bottom: .5em;
+    margin-bottom: 2em;
+    border-bottom: solid 3px #111111;/* 線 */
+}
+
+.Under2 {
+    font-size: 1.5em;/* フォントサイズ */
+    font-weight: bold;/* フォント太さ */   
+    padding-top: .5em;
+    padding-bottom: .5em;
+    margin-bottom: 2em;
+    border-bottom: double 5px #1b98f8;/* 線 */
+    color:#1b98f8;/* フォント色 */
+}
+
+.Dashed {
+    font-size: 1.5em;/* フォントサイズ */
+    font-weight: bold;/* フォント太さ */   
+    padding-top: .5em;
+    padding-bottom: .5em;
+    margin-bottom: 2em;
+    border-bottom: dashed 5px #1b98f8;/* 線 */
+    color:#1b98f8;/* フォント色 */
+}
+
+.Kadomaru {
+    font-size: 1.5em;/* フォントサイズ */
+    font-weight: bold;/* フォント太さ */
+    padding-top: .5em;
+    padding-bottom: .5em;
+    padding-left: .5em;
+    margin-bottom: 2em;
+    background-color: #1b98f8;/* 背景色 */
+    border-radius:15px;/* 角丸 */
+    color: #ffffff;/* フォント色 */
+}
+
+.Husen {
+    font-size: 1.5em;/* フォントサイズ */
+    font-weight: bold;/* フォント太さ */
+    padding-top: .5em;
+    padding-bottom: .5em;
+    padding-left: .5em;
+    margin-bottom: 2em;
+    border-left: 20px solid #1b98f8;/* 線 */
+    background-color: #bbdffa;/* 背景色 */
+}
+
+.Hukidashi {
+    font-size: 1.5em;/* フォントサイズ */
+    font-weight: bold;/* フォント太さ */
+    position: relative;
+    padding: 0.6em;
+    margin-bottom: 2em;
+    background-color: #1b98f8;/* 背景色 */
+    color:#ffffff;/* フォント色 */
+}
+
+.Hukidashi:after {
+    position: absolute;
+    content: '';
+    top: 99%;
+    left: 25px;
+    width: 0;
+    height: 0;
+    border: 15px solid transparent;
+    border-top: 15px solid #1b98f8;
+}
+
+.Stitch {
+    font-size: 1.5em;/* フォントサイズ */
+    font-weight: bold;/* フォント太さ */
+    padding: 0.5em 1em;
+    margin-bottom: 2em;
+    position: relative;
+    background-color: #1b98f8;/* 背景色 */
+    box-shadow: 0px 0px 0px 5px #1b98f8;
+    border: dashed 2px #ffffff;/* 破線 */
+    color:#000000;/* フォント色 */
+}
+
+.Stitch:after {
+    position: absolute;
+    content: '';
+    top: -7px;
+    left: -7px;
+    border-width: 0 0 20px 20px;
+    border-style: dashed;
+    border-color: #fff #fff #1b98f8;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}

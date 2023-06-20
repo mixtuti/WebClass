@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <title>ポートフォリオを作成しよう！！</title>
+        <meta charset="UTF-8">
+        <link href="../portfolio/css/style.css" rel="stylesheet" type="text/css">
+        <link href="../portfolio/css/style0621.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <a name="0621"></a>
+        <div id="0621">
+            <h1>6月21日</h1><br>
+            <hr>
+            <ul>
+                <li><a href="0621.html#info" class="nolink">今後の授業資料</a></li>
+                <li><a href="0621.html#text" class="nolink">テキストを装飾する</a></li>
+                <li><a href="0621.html#css" class="nolink">CSSでデザインを調整する</a></li>
+                <li><a href="0621.html#nav" class="nolink">ナビゲーションを作る</a></li>
+                <li><a href="0621.html#title" class="nolink">CSSを使って更に文字を装飾する(作例付き)</a></li>
+            </ul>
+        </div>
+        <hr>
+
+        <a name="info"></a>
+        <h2>今後の授業資料</h2>
+        <h4>▼授業資料閲覧用QRコード</h4>
+        <p>どちらからでもいいのでアクセスして確認しておいてください。</p>
+        <img src="../portfolio/img/QR_701352.png" alt="QRコード"><br>
+        <h3>https://mixtuti.github.io/Webclass/</h3>
+
+        <hr>
+        <a name="text"></a>
+        <h2>テキストを装飾する</h2>
+        <h4>▼コード</h4>
+        <pre>
+            <code>
+                &lt;b&gt;太字テキスト&lt;/b&gt;
+            </code>
+        </pre>
+        <h4>▼htmlの見た目</h4>
+        普通のテキスト<br>
+        <b>太字テキスト</b>
+
+        <h4>▼コード</h4>
+        <pre>
+            <code>
+                &lt;i&gt;斜体テキスト&lt;/i&gt;
+            </code>
+        </pre>
+        <h4>▼htmlの見た目</h4>
+        普通テキスト<br>
+        <i>斜体テキスト</i>
+
+        <h4>▼コード</h4>
+        <pre>
+            <code>
+                &lt;u&gt;下線テキスト&lt;/u&gt;
+            </code>
+        </pre>
+        <h4>▼htmlの見た目</h4>
+        普通テキスト<br>
+        <u>下線テキスト</u>
+
+        <h4>▼コード</h4>
+        <pre>
+            <code>
+                &lt;s&gt;打ち消し線テキスト&lt;/s&gt;
+            </code>
+        </pre>
+        <h4>▼htmlの見た目</h4>
+        普通テキスト<br>
+        <s>打ち消し線テキスト</s>
+
+        <h4>▼コード</h4>
+        <pre>
+            <code>
+                &lt;strong&gt;強調テキスト&lt;/strong&gt;
+            </code>
+        </pre>
+        <h4>▼htmlの見た目</h4>
+        普通テキスト<br>
+        <strong>強調テキスト</strong>
+
+        <h4>▼コード</h4>
+        <pre>
+            <code>
+                &lt;p style="color: red;"&gt;赤色テキスト&lt;/p&gt;
+            </code>
+        </pre>
+        <h4>▼htmlの見た目</h4>
+        普通テキスト<br>
+        <p style="color: red;">赤色テキスト</p>
+        <hr>
+
+        <a name="css"></a>
+        <h2>CSSでデザインを調整する</h2>
+        <p>CSSを活用すると、HTML内にある関連箇所をいちいち直さなくても、一括して変更可能になります。</p>
+        <h4>▼コード(HTML)</h4>
+        <pre>
+            <code>
+                &lt;!doctype html&gt;
+                &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;title&gt;ポートフォリオ&lt;/title&gt;
+                        &lt;link href="CSSのパス" rel="stylesheet" type="text/css"&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;div class="blue"&gt;
+                            Hello, World
+                        &lt;/div&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;
+            </code>
+        </pre>
+        <h4>▼コード(CSS)</h4>
+        <pre>
+            <code>
+                .blue{
+                    background-color: blue;
+                }
+            </code>
+        </pre>
+        <h4>▼htmlの見た目</h4>
+        <div class="blue">
+            Hello, World
+        </div>
+        <p>見た目は、<a href="../portfolio/0607.html#div">ここ</a>と同じになる。</p>
+        <p>IDは、そのページに一つしかないものにつけます。CLASSは何個でもOKです。</p>
+
+        <hr>
+        <a name="nav"></a>
+        <h2>ナビゲーションを作る</h2>
+        <h4>▼完成イメージ</h4>
+        <img src="../portfolio/img/nav.png" width="30%"><br>
+        <h4>▼コード(HTML)</h4>
+        <pre>
+            <code>
+                &lt;nav&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;ナビ1&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;ナビ2&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;ナビ3&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;ナビ4&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;ナビ5&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/nav&gt;
+            </code>
+        </pre>
+        <h4>▼htmlの見た目</h4>
+        <nav>
+            <ul>
+                <li><a href="#">ナビ1</a></li>
+                <li><a href="#">ナビ2</a></li>
+                <li><a href="#">ナビ3</a></li>
+                <li><a href="#">ナビ4</a></li>
+                <li><a href="#">ナビ5</a></li>
+            </ul>
+        </nav>
+        <p>CSSファイルに以下の記述を追加する。</p>
+        <h4>▼コード(CSS)</h4>
+        <pre>
+            <code>
+                nav {
+                    width: 100%; /* 幅を100%にする */
+                    height: 70px; /* 高さを70pxにする */
+                    background-color: gray; /* 背景を灰色にする */
+                }
+            </code>
+        </pre>
+        <h4>▼htmlの見た目</h4>
+        <nav class="nav">
+            <ul>
+                <li><a href="#">ナビ1</a></li>
+                <li><a href="#">ナビ2</a></li>
+                <li><a href="#">ナビ3</a></li>
+                <li><a href="#">ナビ4</a></li>
+                <li><a href="#">ナビ5</a></li>
+            </ul>
+        </nav>
+        <br><br>
+        <p>灰色のバーにナビを収めたいので横並びにするために以下のコードを追加する。</p>
+        <h4>▼コード(CSS)</h4>
+        <pre>
+            <code>
+                ul {
+                    display: flex; /* 横並びにする */
+                }
+            </code>
+        </pre>
+        <h4>▼htmlの見た目</h4>
+        <nav class="nav">
+            <ul class="ul">
+                <li><a href="#">ナビ1</a></li>
+                <li><a href="#">ナビ2</a></li>
+                <li><a href="#">ナビ3</a></li>
+                <li><a href="#">ナビ4</a></li>
+                <li><a href="#">ナビ5</a></li>
+            </ul>
+        </nav>
+        <br>
+        <p>最後に、箇条書きの・を非表示にし、配置も整えていく。</p>
+        <h4>▼コード(CSS)</h4>
+        <pre>
+            <code>
+                li {
+                    list-style: none; /* 点を削除する */
+                }
+                
+                a {
+                    display: block;
+                    text-decoration: none; /* 装飾を無しにする */
+                    color: white;
+                    margin-right: 35px; /* 間隔をあける */
+                }
+            </code>
+        </pre>
+        <h4>▼htmlの見た目</h4>
+        <nav class="nav">
+            <ul class="ul">
+                <li class="li"><a href="#" class="a">ナビ1</a></li>
+                <li class="li"><a href="#" class="a">ナビ2</a></li>
+                <li class="li"><a href="#" class="a">ナビ3</a></li>
+                <li class="li"><a href="#" class="a">ナビ4</a></li>
+                <li class="li"><a href="#" class="a">ナビ5</a></li>
+            </ul>
+        </nav>
+        <p>次は上下に余白を追加するためにnavに部分に以下を追加する。</p>
+        <h4>▼コード(CSS)</h4>
+        <pre>
+            <code>
+                nav {
+                    /* 一部省略 */
+                    padding-top: 5px; /* 上部に余白 */
+                    box-sizing: border-box; /*paddingの余白によってバーの大きさが変わらないようにする */
+                }
+            </code>
+        </pre>
+        <h4>▼htmlの見た目</h4>
+        <nav class="nav nav-padding">
+            <ul class="ul">
+                <li class="li"><a href="#" class="a">ナビ1</a></li>
+                <li class="li"><a href="#" class="a">ナビ2</a></li>
+                <li class="li"><a href="#" class="a">ナビ3</a></li>
+                <li class="li"><a href="#" class="a">ナビ4</a></li>
+                <li class="li"><a href="#" class="a">ナビ5</a></li>
+            </ul>
+        </nav>
+        <p>次はマウスホバーしたときに色が変わるようにしていきます。</p>
+        <h4>▼コード(CSS)</h4>
+        <pre>
+            <code>
+                a:hover { /* ホバー時の処理 */
+                    color: rgb(0, 174, 255);
+                }
+            </code>
+        </pre>
+        <h4>▼htmlの見た目</h4>
+        <nav class="nav nav-padding">
+            <ul class="ul">
+                <li class="li"><a href="#" class="a a-hover">ナビ1</a></li>
+                <li class="li"><a href="#" class="a a-hover">ナビ2</a></li>
+                <li class="li"><a href="#" class="a a-hover">ナビ3</a></li>
+                <li class="li"><a href="#" class="a a-hover">ナビ4</a></li>
+                <li class="li"><a href="#" class="a a-hover">ナビ5</a></li>
+            </ul>
+        </nav>
+        <p>最後に、ナビを一番上に固定していきます。</p>
+        <h4>▼コード(CSS)</h4>
+        <pre>
+            <code>
+                nav {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                }
+            </code>
+        </pre>
+        <h4>▼htmlの見た目</h4>
+        <a href="../portfolio/0621nav.html" target="_blank">ここ</a>から別ページに飛べます。
+
+        <p>ヘッダーはheaderタグで囲むとよい。</p>
+        <pre>
+            <code>
+                &lt;!doctype html&gt;
+                &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;title&gt;ポートフォリオ&lt;/title&gt;
+                        &lt;link href="CSSのパス" rel="stylesheet" type="text/css"&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;heder&gt;
+                            &lt;nav&gt;
+                                &lt;ul&gt;
+                                    &lt;li&gt;&lt;a href="#"&gt;ナビ1&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a href="#"&gt;ナビ2&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a href="#"&gt;ナビ3&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a href="#"&gt;ナビ4&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a href="#"&gt;ナビ5&lt;/a&gt;&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/nav&gt;
+                        &lt;/heder&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;
+            </code>
+        </pre>
+        <hr>
+
+        <a name="title"></a>
+        <h2>CSSを使って更に文字を装飾する(作例付き)</h2>
+        <h4>▼コード(HTML)共通で使用します</h4>
+        <pre>
+            <code>
+                &lt;p class="sample"&gt;見出しの作例&lt;/p&gt;
+            </code>
+        </pre>
+        <h4>▼htmlの見た目</h4>
+        <p class="sample">見出しの作例</p>
+        <p>ここからCSSのみ変更して、デザインを変更します。</p>
+        <br>
+
+        <h1 class="number-title"><span class="number t_normal">1</span>下線のみシンプルなもの</h1>
+        <h4>▼htmlの見た目</h4>
+        <p class="Under1">見出しの作例</p>
+        <h4>▼コード(CSS)</h4>
+        <pre>
+            <code>
+                .sample {
+                    font-size: 1.5em;/* フォントサイズ */
+                    font-weight: bold;/* フォント太さ */   
+                    padding-top: .5em;
+                    padding-bottom: .5em;
+                    margin-bottom: 2em;
+                    border-bottom: solid 3px #111111;/* 線 */
+                }
+            </code>
+        </pre>
+
+        <h1 class="number-title"><span class="number t_normal">2</span>二重の下線</h1>
+        <h4>▼htmlの見た目</h4>
+        <p class="Under2">見出しの作例</p>
+        <h4>▼コード(CSS)</h4>
+        <pre>
+            <code>
+                .sample {
+                    font-size: 1.5em;/* フォントサイズ */
+                    font-weight: bold;/* フォント太さ */   
+                    padding-top: .5em;
+                    padding-bottom: .5em;
+                    margin-bottom: 2em;
+                    border-bottom: double 5px #5490cc;/* 線 */
+                    color:#5490cc;/* フォント色 */
+                }
+            </code>
+        </pre>
+        <p>border-bottomをdashedに変えると破線になる。</p>
+        <p class="Dashed">見出しの作例</p>
+
+        <h1 class="number-title"><span class="number t_normal">3</span>角丸に白抜き文字</h1>
+        <p class="Kadomaru">見出しの作例</p>
+        <h4>▼コード(CSS)</h4>
+        <pre>
+            <code>
+                .sample {
+                    font-size: 1.5em;/* フォントサイズ */
+                    font-weight: bold;/* フォント太さ */
+                    padding-top: .5em;
+                    padding-bottom: .5em;
+                    padding-left: .5em;
+                    margin-bottom: 2em;
+                    background-color: #1b98f8;/* 背景色 */
+                    border-radius:15px;/* 角丸 */
+                    color: #ffffff;/* フォント色 */
+                }
+            </code>
+        </pre>
+
+        <h1 class="number-title"><span class="number t_normal">4</span>付箋風な感じ</h1>
+        <p class="Husen">見出しの作例</p>
+        <h4>▼コード(CSS)</h4>
+        <pre>
+            <code>
+                .sample {
+                    font-size: 1.5em;/* フォントサイズ */
+                    font-weight: bold;/* フォント太さ */
+                    padding-top: .5em;
+                    padding-bottom: .5em;
+                    padding-left: .5em;
+                    margin-bottom: 2em;
+                    border-left: 20px solid #1b98f8;/* 線 */
+                    background-color: #bbdffa;/* 背景色 */
+                }
+            </code>
+        </pre>
+
+        <h1 class="number-title"><span class="number t_normal">5</span>吹き出し</h1>
+        <p class="Hukidashi">見出しの作例</p>
+        <h4>▼コード(CSS)</h4>
+        <pre>
+            <code>
+                .sample {
+                    font-size: 1.5em;/* フォントサイズ */
+                    font-weight: bold;/* フォント太さ */
+                    position: relative;
+                    padding: 0.6em;
+                    margin-bottom: 2em;
+                    background-color: #1b98f8;/* 背景色 */
+                    color:#ffffff;/* フォント色 */
+                }
+                .sample:after {
+                    position: absolute;
+                    content: '';
+                    top: 99%;
+                    left: 25px;
+                    width: 0;
+                    height: 0;
+                    border: 15px solid transparent;
+                    border-top: 15px solid #1b98f8;
+                }
+            </code>
+        </pre>
+
+        <h1 class="number-title"><span class="number t_normal">6</span>ステッチ風</h1>
+        <p class="Stitch">見出しの作例</p>
+        <pre>
+            <code>
+                .sample {
+                    font-size: 1.5em;/* フォントサイズ */
+                    font-weight: bold;/* フォント太さ */
+                    padding: 0.5em 1em;
+                    margin-bottom: 2em;
+                    position: relative;
+                    background-color: #1b98f8;/* 背景色 */
+                    box-shadow: 0px 0px 0px 5px #1b98f8;
+                    border: dashed 2px #ffffff;/* 破線 */
+                    color:#000000;/* フォント色 */
+                }
+                
+                .sample:after {
+                    position: absolute;
+                    content: '';
+                    top: -7px;
+                    left: -7px;
+                    border-width: 0 0 20px 20px;
+                    border-style: dashed;
+                    border-color: #fff #fff #1b98f8;
+                    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+                }
+            </code>
+        </pre>
+    </body>
+</html>

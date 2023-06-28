@@ -1,0 +1,487 @@
+.Two-column {
+    display: flex;
+}
+  
+.right {
+    width: 50%;
+    background-color: #bbdffa;
+}
+.left {
+    width: 50%;
+    background-color: #bbfaca;
+}
+
+@media screen and (max-width: 767px) {
+    .Two-column {
+        display: block;
+    }
+  
+    .right {
+        margin-top: -1rem;
+        width: 100%;
+    }
+    .left {
+        width: 100%;
+    }
+}
+
+.button a {
+    background: #eee;
+    border-radius: 3px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* margin: 0 auto; */
+    max-width: 280px;
+    padding: 10px 25px;
+    color: #313131;
+    transition: 0.3s ease-in-out;
+    text-decoration: none;
+}
+.button a:hover {
+    background: #313131;
+    color: #fff;
+}
+.button a:after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-top: 3px solid #313131;
+    border-right: 3px solid #313131;
+    transform: rotate(45deg) translateY(-50%);
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    border-radius: 1px;
+    transition: 0.3s ease-in-out;
+}
+.button a:hover:after {
+    border-color: #fff;
+}
+
+.kadomaru-button a {
+    background: #eee;
+    border-radius: 50px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 260px;
+    padding: 10px 25px;
+    color: #313131;
+    transition: 0.3s ease-in-out;
+    text-decoration: none;
+}
+.kadomaru-button a:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    right: 2rem;
+    font-size: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.3s;
+    width: 6px;
+    height: 6px;
+    border-top: solid 2px currentColor;
+    border-right: solid 2px currentColor;
+    transform: translateY(-50%) rotate(45deg);
+}
+.kadomaru-button a:hover {
+    background: #6bb6ff;
+    color: #fff;
+}
+.kadomaru-button a:hover:after {
+    right: 1.4rem; /* 移動する距離と角度 */
+}
+
+.curtain a {
+    background: #eee;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 240px;
+    padding: 10px 25px;
+    color: #313131;
+    transition: 0.3s ease-in-out;
+    z-index:0; /* 重なりの順序 */
+    border-left: solid 5px #6bb6ff; /* 左側の装飾 */
+    text-decoration: none;
+}
+.curtain a:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    display: block;
+    background: #6bb6ff;
+    transition: .3s;
+    left:0;
+}
+.curtain a:hover {
+    color: #fff;
+}
+.curtain a:hover:before {
+    width: 100%;
+    z-index: -1;
+}
+
+.button_line a {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* margin: 0 auto; */
+    max-width: 200px;
+    padding: 10px 25px;
+    color: #313131;
+    transition: 0.3s ease-in-out;
+    text-decoration: none;
+}
+.button_line a:before {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: rgba(0,0,0,.1);
+    transform: translateX(-50%);
+}
+.button_line a:after {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #000;
+    transform: scale(0, 1);
+    transform-origin: left top;
+    transition: transform .3s;
+}
+.button_line a:hover {
+    opacity: 0.7; /* 透明度 */
+}
+.button_line a:hover:after {
+    transform: scale(1, 1);
+}
+
+.button_doubleLine a {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 220px;
+    padding: 10px 25px;
+    color: #313131;
+    transition: 0.3s ease-in-out;
+    text-decoration: none;
+}
+.button_doubleLine a:before,
+.button_doubleLine a:after {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    content: '';
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    background: #6bb6ff;
+}
+.button_doubleLine a:before {
+    top: 0;
+    left: 0;
+}
+.button_doubleLine a:after {
+    right: 0;
+    bottom: 0;
+}
+.button_doubleLine a:hover:before,
+.button_doubleLine a:hover:after {
+    width: 0;
+}
+
+.button_border a {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 200px;
+    padding: 10px 25px;
+    color: #313131;
+    transition: 0.3s ease-in-out;
+    text-decoration: none;
+}
+/* 「　」の部分の装飾 */
+.button_border a:before,
+.button_border a:after {
+	content: '';
+	width: 18px;
+	height: 18px;
+	border-color: #6bb6ff;
+	box-sizing: border-box;
+	border-style :solid;
+	display: block;
+	position: absolute;
+	transition: all 0.3s ease-in-out;
+}
+.button_border a:before {
+	top: -6px;
+	left: -6px;
+	border-width: 2px 0 0 2px;
+	z-index: 5;
+}
+.button_border a:after {
+	bottom: -6px;
+	right: -6px;
+	border-width: 0 2px 2px 0;
+}
+.button_border a:hover:before,
+.button_border a:hover:after {
+	width: calc(100% + 12px); /* 計算を行う +12pxが無いと隙間ができる */
+	height: calc(100% + 12px);
+	border-color: #6bb6ff;
+}
+.button_border a:hover {
+	color: #fff;
+	background-color: #6bb6ff;
+	border-color: #6bb6ff;
+}
+
+.button_around a {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 220px;
+    padding: 10px 25px;
+    color: #313131;
+    transition: 0.3s ease-in-out;
+    background: #eee;
+    text-decoration: none;
+}
+.button_around a:hover {
+    background: #ebfcfe;
+    color: #6bb6ff;
+}
+.button_around a:before,
+.button_around a:after {
+    box-sizing: inherit;
+    content: "";
+    position: absolute;
+    border: 2px solid transparent;
+    width: 0;
+    height: 0;
+}
+.button_around a:before {
+    top: 0;
+    left: 0;
+}
+.button_around a:after {
+    bottom: 0;
+    right: 0;
+}
+.button_around a:hover:before,
+.button_around a:hover:after {
+    width: 99.5%;
+    height: 95%;
+}
+.button_around a:hover:before {
+    border-top-color: #6bb6ff;
+    border-right-color: #6bb6ff;
+    transition: width 0.15s ease-out, height 0.15s ease-out 0.15s;
+}
+.button_around a:hover:after {
+    border-bottom-color: #6bb6ff;
+    border-left-color: #6bb6ff;
+    transition: border-color 0s ease-out 0.2s, width 0.15s ease-out 0.2s, height 0.15s ease-out 0.3s;
+}
+
+.button_box a {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 240px;
+    padding: 10px 25px;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+    text-decoration: none;
+    background: #6bb6ff;
+    border-radius: 3px;
+    /* X座標→Y座標→ぼかし半径→拡散の半径→色 */
+    box-shadow: 0.2rem 0.2rem 0px 0.1rem #acc;
+    overflow: hidden;
+}
+/* ボタンを押したようなアニメーション */
+.button_box a:hover {
+    /* box-shadowの第1引数、第2引数と同じにしておくといい */
+    transform: translate3d(0.2rem, 0.2rem, 0);
+    box-shadow: none;
+    opacity: 1;
+    transition: all 0.2s;
+}
+/* きらきらする処理 */
+.button_box a:before{
+    content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: -100%;
+        background-image: linear-gradient( 130deg, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 55%);
+        /* -webkit-transition: 0.5s; */
+        transition: 0.6s;
+}
+.button_box a:hover:before {
+    left: 100%;
+}
+.button_box a:after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-top: 3px solid #fff;
+    border-right: 3px solid #fff;
+    transform: rotate(45deg) translateY(-50%);
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    border-radius: 1px;
+    transition: 0.3s ease-in-out;
+}
+
+/* .button_stripe a {
+    position: relative;
+    display: inline-block;
+    padding: 1rem 3rem;
+    color: #000;
+    background-color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    background-size: 15px 15px;
+    border: 2px solid #000;
+    border-radius: 0.5rem;
+    transition: all 0.3s;
+}
+
+.button_stripe a:hover {
+    transform: translate(0, 3px);
+    z-index: 9999;
+    background-color: #fff;
+}
+
+.button_stripe a:before {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 14px;
+    border: 2px solid #000;
+    border-top: 1px solid #000;
+    border-radius: 0 0 0.5rem 0.5rem;
+    background: repeating-linear-gradient(-45deg, #000, #000 1px, transparent 2px, transparent 5px);
+    background-size: 7px 7px;
+    transition: all 0.3s;
+    z-index: -9999;
+}
+
+.button_stripe a:hover:before {
+    bottom: -5px;
+    z-index: -9999;
+} */
+
+.button_stripe {
+    min-width: 240px;
+    position: relative;
+    display: inline-block;
+    padding: 1rem 3rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    color: #212529;
+    border-radius: 0.5rem;
+    margin-bottom: 12px;
+    padding: 0;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.button_stripe a {
+    text-decoration: none;
+}
+
+.button_stripe span {
+    position: relative;
+    display: block;
+    padding: 10px 25px;
+    color: #000;
+    border: 2px solid #000;
+    border-radius: 0.5rem;
+    background: #fff;
+}
+
+.button_stripe:before {
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 14px;
+    content: "";
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    border: 2px solid #000;
+    border-top: 1px solid #000;
+    border-radius: 0 0 0.5rem 0.5rem;
+    /* background-image: -webkit-repeating-linear-gradient(
+        135deg,
+        #000,
+        #000 1px,
+        transparent 2px,
+        transparent 5px
+    ); */
+    background-image: repeating-linear-gradient(
+        -45deg,
+        #000,
+        #000 1px,
+        transparent 2px,
+        transparent 5px
+    );
+    background-size: 7px 7px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.button_stripe:hover {
+    -webkit-transform: translate(0, 3px);
+    transform: translate(0, 3px);
+}
+
+.button_stripe:hover:before {
+    bottom: -5px;
+}
+
+.button_stripe:active {
+    -webkit-transform: translate(0, 7px);
+    transform: translate(0, 7px);
+}
+
+.button_stripe:active:before {
+    bottom: -1px;
+}

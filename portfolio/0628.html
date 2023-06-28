@@ -1,0 +1,849 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <title>ポートフォリオを作成しよう！！</title>
+        <meta charset="UTF-8">
+        <link href="../portfolio/css/style.css" rel="stylesheet" type="text/css">
+        <link href="../portfolio/css/style0621.css" rel="stylesheet" type="text/css">
+        <link href="../portfolio/css/style0628.css" rel="stylesheet" type="text/css">
+        <!-- Start Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" rel="stylesheet">
+        <!-- End Google Fonts -->
+    </head>
+    <body>
+        <a name="0628"></a>
+        <div id="0628">
+            <h1>6月28日</h1><br>
+            <hr>
+            <ul>
+                <li><a href="0628.html#CanIUse" class="nolink">対応しているブラウザを確認する(閑話休題)</a></li>
+                <li><a href="0628.html#font" class="nolink">フォントを変更してみる</a></li>
+                <li><a href="0628.html#more-font" class="nolink">もっと沢山のフォントを見てみる</a></li>
+                <li><a href="0628.html#block" class="nolink">サイトをレイアウトする</a></li>
+                <li><a href="0628.html#responsive" class="nolink">デザインをレスポンシブデザインにする</a></li>
+                <li><a href="0628.html#button" class="nolink">ボタンをデザインにする(作例付き)</a></li>
+            </ul>
+        </div>
+        <hr>
+
+        <a name="info"></a>
+        <h2>今後の授業資料</h2>
+        <h4>▼授業資料閲覧用QRコード</h4>
+        <p>どちらからでもいいのでアクセスして確認しておいてください。</p>
+        <img src="../portfolio/img/QR_701352.png" alt="QRコード"><br>
+        <h3>https://mixtuti.github.io/Webclass/</h3>
+        <hr>
+
+        <a name="CanIUse"></a>
+        <h2>対応しているブラウザを確認する(閑話休題)</h2>
+        <img src="../portfolio/img/CanIUse.png" width="70%">
+        <p><a href="https://caniuse.com/">Can I use</a>(https://caniuse.com/)というサイトを使うことで各ブラウザに対応しているか確認することができる。</p>
+        <p>前回、斜体にならなかったのはフォントがイタリックに対応していない可能性がある。</p>
+
+        <p><a href="https://developer.mozilla.org/ja/">MDN Web Docs</a>(https://developer.mozilla.org/ja/)というサイトもhtmlやCSSの勉強に使えます。</p>
+        <hr>
+
+        <a name="font"></a>
+        <h2>フォントを変更してみる。</h2>
+        <h4>▼コード</h4>
+        <pre>
+            <code>
+                &lt;font face=”フォント名”&gt;ここに文章。Text here.&lt;/font&gt;
+            </code>
+        </pre>
+        <table border="1" style="width: 50%;">
+            <tr>
+                <th>フォント名</th>
+                <th>見た目</th>
+            </tr>
+            <tr>
+                <td>ＭＳ Ｐ明朝</td>
+                <td><font face="ＭＳ Ｐ明朝">ここに文章。Text here.</font></td>
+            </tr>
+            <tr>
+                <td>arial black</td>
+                <td><font face="arial black">ここに文章。Text here.</font></td>
+            </tr>
+            <tr>
+                <td>Comic Sans MS</td>
+                <td><font face="Comic Sans MS">ここに文章。Text here.</font></td>
+            </tr>
+            <tr>
+                <td>Script</td>
+                <td><font face="Script">ここに文章。Text here.</font></td>
+            </tr>
+            <tr>
+                <td>fantasy</td>
+                <td><font face="fantasy">ここに文章。Text here.</font></td>
+            </tr>
+            <tr>
+                <td>Times New Roman</td>
+                <td><font face="Times New Roman">ここに文章。Text here.</font></td>
+            </tr>
+        </table>
+        <p>※見た目が変わっていないように見えている場合は、フォントがブラウザに対応でしていない可能性があります。</p>
+        <p>この下のWebフォントを使用すると、解消されます。</p>
+        <hr>
+
+        <a name="more-font"></a>
+        <h2>もっと沢山のフォントを見てみる</h2>
+        <p>Google Fontというのを利用して、更にフォントを見てみる。</p>
+        <img src="../portfolio/img/font.png" style="width: 50%;">
+        <p><a href="https://fonts.google.com/" target="_blank">https://fonts.google.com/</a>にアクセスして下さい。</p>
+        <p>好きなフォントを選択してください。</p>
+        <img src="../portfolio/img/font2.png" width="50%">
+        <p>選択すると上記画像のようになるので、セレクトの部分をクリック</p>
+        <img src="../portfolio/img/font3.png" width="50%">
+        <p>Use on the webの所から、コピーします。</p>
+        <p>head要素の中に先程コピーした物をペーストします。</p>
+        <pre>
+            <code>
+                &lt;head&gt;
+                    &lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+                    &lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
+                    &lt;link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" rel="stylesheet"&gt;
+                &lt;/head&gt;
+            </code>
+        </pre>
+        <p>次にCSS用の物もコピーします。</p>
+        <pre>
+            <code>
+                .Zen-Kurenaido{ /*分かりやすくするためフォント名にするのが無難 */
+                    font-family: 'Zen Kurenaido', sans-serif;
+                }
+            </code>
+        </pre>
+        <p>変えるにはクラス名に先ほど登録した名前を書くだけでできる。</p>
+        <p>普通のフォント</p>
+        <p class="Kadomaru">見出しの作例</p>
+        <p>追加したフォント</p>
+        <p class="Kadomaru Zen-Kurenaido">見出しの作例</p>
+        <p>タイトルなどの要所要所に入れるのがいいかも</p>
+        <hr>
+
+        <a name="block"></a>
+        <h2>サイトをレイアウトする</h2>
+        <h4>▼コード(HTML)</h4>
+        <pre>
+            <code>
+                &lt;header&gt;ヘッダー&lt;/header&gt;
+                &lt;div class="blocka"&gt;
+                    コンテンツA
+                &lt;/div&gt;
+                &lt;div class="blockb"&gt;
+                    コンテンツB
+                &lt;/div&gt;
+                &lt;footer&gt;フッター&lt;/footer&gt;
+            </code>
+        </pre>
+        <h4>▼コード(CSS)</h4>
+        <pre>
+            <code>
+                header {
+                    background: #ff838b;
+                }
+                
+                .blocka {
+                    height: 100px;
+                    background-color: #bbdffa;
+                }
+                
+                .blockb {
+                    height: 100px;
+                    background-color: #bbfaca;
+                }
+                
+                footer {
+                    background: #ffce5b;
+                }
+            </code>
+        </pre>
+        <h4>▼htmlの見た目</h4>
+        <header class="header">ヘッダー</header>
+        <div class="blocka">
+            コンテンツA
+        </div>
+        <div class="blockb">
+            コンテンツB
+        </div>
+        <footer class="footer">フッター</footer>
+        <p>2段組みにしてみよう</p>
+        <h4>▼コード(CSS) .blockaに以下を追加します。</h4>
+        <pre>
+            <code>
+                float: left;
+                width: 60%;/* 好きな数字にしてください。 */
+            </code>
+        </pre>
+        <h4>▼htmlの見た目</h4>
+        <header class="header">ヘッダー</header>
+        <div class="blocka float-left">
+            コンテンツA
+        </div>
+        <div class="blockb">
+            コンテンツB
+        </div>
+        <footer class="footer">フッター</footer>
+
+        <p>display: flex;でも同じことができる。</p>
+        <h4>▼コード(HTML)</h4>
+        <pre>
+            <code>
+                &lt;header class="header"&gt;ヘッダー&lt;/header&gt;
+                &lt;div class="main"&gt;
+                    &lt;div class="blocka""&gt;
+                        コンテンツA
+                    &lt;/div&gt;
+                    &lt;div class="blockb""&gt;
+                        コンテンツB
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;footer class="footer"&gt;フッター&lt;/footer&gt;
+            </code>
+        </pre>
+        <h4>▼コード(CSS)</h4>
+        <pre>
+            <code>
+                .blocka {
+                    width: 60%;
+                    height: 100px;
+                    background-color: #bbdffa;
+                }
+                
+                .blockb {
+                    width: 40%;
+                    height: 100px;
+                    background-color: #bbfaca;
+                }
+                
+                .footer {
+                    background: #ffce5b;
+                }
+                                
+                .main {
+                    display: flex;
+                }
+            </code>
+        </pre>
+        <h4>▼htmlの見た目</h4>
+        <header class="header">ヘッダー</header>
+        <div class="main">
+            <div class="blocka" style="width: 60%;">
+                コンテンツA
+            </div>
+            <div class="blockb" style="width: 40%;">
+                コンテンツB
+            </div>
+        </div>
+        <footer class="footer">フッター</footer>
+
+        <hr>
+        <a name="responsive"></a>
+        <h2>デザインをレスポンシブデザインにする</h2>
+        <p>レスポンシブなデザインにすることでスマホ用とPC用で別々にhtmlファイルを用意しなくても大丈夫になる。</p>
+        <p>以下二つの方法があります。</p>
+        <p><strong>1:ビューポート(viewport)を設定する</strong></p>
+        <pre>
+            <code>
+                &lt;head&gt;
+                    &lt;!-- ビューポートの設定 --&gt;
+                    &lt;meta name="viewport" content="width=device-width,initial-scale=1"&gt;
+                &lt;/head&gt;
+            </code>
+        </pre>
+        <p>表示領域を、各端末の画面幅に合わせて、いい感じに調整してくれます。</p>
+        <p><strong>2:メディアクエリを設定する</strong></p>
+        <h4>▼コード(CSS)</h4>
+        <pre>
+            <code>
+                /* 768~1020pxの幅に対応した処理(主にタブレットや画面の小さいPC用) */
+                @media (max-width: 1020px) and (min-width: 768px) { 
+                    /* ここに処理を書く */
+                }
+                /* スマホ用 */
+                @media (max-width: 767px) { 
+                    /* ここに処理を書く */
+                }
+            </code>
+        </pre>
+
+        <h4>▼コード(HTML)</h4>
+        <pre>
+            <code>
+                &lt;div class="Two-column"&gt;
+                    &lt;div class="left"&gt;
+                        &lt;p&gt;左側のコンテンツ&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class="right"&gt;
+                        &lt;p&gt;右側のコンテンツ&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            </code>
+        </pre>
+        <p>このような、htmlを書いたとする。</p>
+        <h4>▼コード(CSS)</h4>
+        <pre>
+            <code>
+                .Two-column {
+                    display: flex;
+                }
+                .left {
+                    width: 50%;
+                    background-color: #bbfaca;
+                }
+                .right {
+                    width: 50%;
+                    background-color: #bbdffa;
+                }
+
+                @media screen and (max-width: 767px) {
+                    .Two-column {
+                        display: block;
+                    }
+                    .left {
+                        width: 100%;
+                    }
+                    .right {
+                        margin-top: -1rem;
+                        width: 100%;
+                    }
+                }
+            </code>
+        </pre>
+        <div class="Two-column">
+            <div class="left">
+                <p>左側のコンテンツ</p>
+            </div>
+            <div class="right">
+                <p>右側のコンテンツ</p>
+            </div>
+        </div>
+        <p>ブラウザの幅を変えると、段組みが解除されます。試してみてください。</p>
+        <hr>
+
+        <a name="button"></a>
+        <h2>ボタンをデザインにする(作例付き)</h2>
+
+        <p>今回も基本的に以下の物を基本として使用します。</p>
+        <pre>
+            <code>
+                &lt;div class="button"&gt;
+                    &lt;a href="#"&gt;ボタンのデザイン&lt;/a&gt;
+                &lt;/div&gt;
+            </code>
+        </pre>
+
+        <h1 class="number-title"><span class="number t_normal">1</span>シンプルなボタン</h1>
+        <h4>▼htmlの見た目</h4>
+        <div class="button">
+            <a href="#">ボタンのデザイン</a>
+        </div>
+        <h4>▼コード(CSS)</h4>
+        <pre>
+            <code>
+                .button a {
+                    background: #eee; /* 背景色 */
+                    border-radius: 3px; /* 外側の角を丸める */
+                    position: relative; /* 相対位置を指定する */
+                    display: flex;
+                    justify-content: space-around; /* フレックスアイテムの主軸方向の揃え位置を指定する */
+                    align-items: center;
+                    max-width: 280px;
+                    padding: 10px 25px;
+                    color: #313131;
+                    transition: 0.3s ease-in-out; /* 状態間の変化を定義する */
+                    text-decoration: none;
+                }
+                .button a:hover {
+                    background: #313131;
+                    color: #fff;
+                }
+                .button a:after {
+                    content: '';
+                    width: 5px;
+                    height: 5px;
+                    /* >の部分のレイアウト */
+                    border-top: 3px solid #313131;
+                    border-right: 3px solid #313131;
+                    transform: rotate(45deg) translateY(-50%);
+                    position: absolute;
+                    top: 50%;
+                    right: 20px;
+                    border-radius: 1px;
+                    transition: 0.3s ease-in-out;
+                }
+                .button a:hover:after {
+                    border-color: #fff;
+                }
+            </code>
+        </pre>
+
+        <h1 class="number-title"><span class="number t_normal">2</span>角丸ボタンとアニメーション</h1>
+        <h4>▼htmlの見た目</h4>
+        <div class="kadomaru-button">
+            <a href="#">ボタンのデザイン</a>
+        </div>
+        <h4>▼コード(CSS)</h4>
+        <pre>
+            <code>
+                .button a {
+                    background: #eee;
+                    border-radius: 50px;
+                    position: relative;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    max-width: 260px;
+                    padding: 10px 25px;
+                    color: #313131;
+                    transition: 0.3s ease-in-out;
+                    text-decoration: none;
+                }
+                .button a:after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    bottom: 0;
+                    right: 2rem;
+                    font-size: 90%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition: right 0.3s;
+                    width: 6px;
+                    height: 6px;
+                    border-top: solid 2px currentColor;
+                    border-right: solid 2px currentColor;
+                    transform: translateY(-50%) rotate(45deg);
+                }
+                .button a:hover {
+                    background: #6bb6ff;
+                    color: #fff;
+                }
+                .button a:hover:after {
+                    right: 1.4rem; /* 移動する距離と角度 */
+                }
+            </code>
+        </pre>
+
+        <h1 class="number-title"><span class="number t_normal">3</span>左から右へのアニメーション</h1>
+        <h4>▼htmlの見た目</h4>
+        <div class="curtain">
+            <a href="#">ボタンのデザイン</a>
+        </div>
+        <h4>▼コード(CSS)</h4>
+        <pre>
+            <code>
+                .button a {
+                    background: #eee;
+                    position: relative;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    max-width: 240px;
+                    padding: 10px 25px;
+                    color: #313131;
+                    transition: 0.3s ease-in-out;
+                    z-index:0; /* 重なりの順序 */
+                    border-left: solid 5px #6bb6ff; /* 左側の装飾 */
+                    text-decoration: none;
+                }
+                .button a:before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    width: 0;
+                    display: block;
+                    background: #6bb6ff;
+                    transition: .3s;
+                    left: 0; /* 左からアニメーションする */
+                }
+                .button a:hover {
+                    color: #fff;
+                }
+                .button a:hover:before {
+                    width: 100%;
+                    z-index: -1;
+                }
+            </code>
+        </pre>
+
+        <h1 class="number-title"><span class="number t_normal">4</span>線のボタン</h1>
+        <h4>▼htmlの見た目</h4>
+        <div class="button_line">
+            <a href="#">ボタンのデザイン</a>
+        </div>
+        <h4>▼コード(CSS)</h4>
+        <pre>
+            <code>
+                .button a {
+                    position: relative;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    max-width: 200px;
+                    padding: 10px 25px;
+                    color: #313131;
+                    transition: 0.3s ease-in-out;
+                    text-decoration: none;
+                }
+                .button a:before {
+                    position: absolute;
+                    bottom: 0px;
+                    left: 50%;
+                    content: '';
+                    width: 100%;
+                    height: 2px;
+                    background: rgba(0,0,0,.1);
+                    transform: translateX(-50%);
+                }
+                .button a:after {
+                    position: absolute;
+                    bottom: 0px;
+                    left: 0;
+                    content: '';
+                    width: 100%;
+                    height: 2px;
+                    background: #000;
+                    transform: scale(0, 1);
+                    transform-origin: left top; /* 左からアニメーションする */
+                    transition: transform .3s;
+                }
+                .button a:hover {
+                    opacity: 0.7; /* 透明度 */
+                }
+                .button a:hover:after {
+                    transform: scale(1, 1);
+                }
+            </code>
+        </pre>
+
+        <h1 class="number-title"><span class="number t_normal">5</span>上下に線があるボタン</h1>
+        <h4>▼htmlの見た目</h4>
+        <div class="button_doubleLine">
+            <a href="#">ボタンのデザイン</a>
+        </div>
+        <h4>▼コード(CSS)</h4>
+        <pre>
+            <code>
+                .button a {
+                    position: relative;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    max-width: 220px;
+                    padding: 10px 25px;
+                    color: #313131;
+                    transition: 0.3s ease-in-out;
+                    text-decoration: none;
+                }
+                .button a:before,
+                .button a:after {
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    content: '';
+                    -webkit-transition: all .3s;
+                    transition: all .3s;
+                    background: #6bb6ff;
+                }
+                .button a:before {
+                    top: 0;
+                    left: 0;
+                }
+                .button a:after {
+                    right: 0;
+                    bottom: 0;
+                }
+                .button a:hover:before,
+                .button a:hover:after {
+                    width: 0;
+                }
+            </code>
+        </pre>
+
+        <h1 class="number-title"><span class="number t_normal">6</span>枠線のボタン</h1>
+        <h4>▼htmlの見た目</h4>
+        <div class="button_border">
+            <a href="#">ボタンのデザイン</a>
+        </div>
+        <h4>▼コード(CSS)</h4>
+        <pre>
+            <code>
+                .button a {
+                    position: relative;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    max-width: 200px;
+                    padding: 10px 25px;
+                    color: #313131;
+                    transition: 0.3s ease-in-out;
+                    text-decoration: none;
+                }
+                /* 「　」の部分の装飾 */
+                .button a:before,
+                .button a:after {
+                    content: '';
+                    width: 18px;
+                    height: 18px;
+                    border-color: #6bb6ff;
+                    box-sizing: border-box;
+                    border-style :solid;
+                    display: block;
+                    position: absolute;
+                    transition: all 0.3s ease-in-out;
+                }
+                .button a:before {
+                    top: -6px;
+                    left: -6px;
+                    border-width: 2px 0 0 2px;
+                    z-index: 5;
+                }
+                .button a:after {
+                    bottom: -6px;
+                    right: -6px;
+                    border-width: 0 2px 2px 0;
+                }
+                .button a:hover:before,
+                .button a:hover:after {
+                    width: calc(100% + 12px); /* 計算を行う +12pxが無いと隙間ができる */
+                    height: calc(100% + 12px);
+                    border-color: #6bb6ff;
+                }
+                .button a:hover {
+                    color: #fff;
+                    background-color: #6bb6ff;
+                    border-color: #6bb6ff;
+                }
+            </code>
+        </pre>
+
+        <h1 class="number-title"><span class="number t_normal">7</span>枠線が1周するボタン</h1>
+        <h4>▼htmlの見た目</h4>
+        <div class="button_around">
+            <a href="#">ボタンのデザイン</a>
+        </div>
+        <h4>▼コード(CSS)</h4>
+        <pre>
+            <code>
+                .button a {
+                    position: relative;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    max-width: 220px;
+                    padding: 10px 25px;
+                    color: #313131;
+                    transition: 0.3s ease-in-out;
+                    background: #eee;
+                    text-decoration: none;
+                }
+                .button a:hover {
+                    background: #ebfcfe;
+                    color: #6bb6ff;
+                }
+                .button a:before,
+                .button a:after {
+                    box-sizing: inherit;
+                    content: "";
+                    position: absolute;
+                    border: 2px solid transparent;
+                    width: 0;
+                    height: 0;
+                }
+                .button a:before {
+                    top: 0;
+                    left: 0;
+                }
+                .button a:after {
+                    bottom: 0;
+                    right: 0;
+                }
+                .button a:hover:before,
+                .button a:hover:after {
+                    width: 99.5%;
+                    height: 95%;
+                }
+                .button a:hover:before {
+                    border-top-color: #6bb6ff;
+                    border-right-color: #6bb6ff;
+                    transition: width 0.15s ease-out, height 0.15s ease-out 0.15s;
+                }
+                .button a:hover:after {
+                    border-bottom-color: #6bb6ff;
+                    border-left-color: #6bb6ff;
+                    transition: border-color 0s ease-out 0.2s, width 0.15s ease-out 0.2s, height 0.15s ease-out 0.3s;
+                }
+            </code>
+        </pre>
+
+        <h1 class="number-title"><span class="number t_normal">8</span>立体に見え、キラキラ光るボタン</h1>
+        <h4>▼htmlの見た目</h4>
+        <div class="button_box">
+            <a href="#">ボタンのデザイン</a>
+        </div>
+        <h4>▼コード(CSS)</h4>
+        <pre>
+            <code>
+                .button a {
+                    position: relative;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    max-width: 240px;
+                    padding: 10px 25px;
+                    color: #fff;
+                    transition: 0.3s ease-in-out;
+                    text-decoration: none;
+                    background: #6bb6ff;
+                    border-radius: 3px;
+                    /* X座標→Y座標→ぼかし半径→拡散の半径→色 */
+                    box-shadow: 0.2rem 0.2rem 0px 0.1rem #acc;
+                    overflow: hidden;
+                }
+                /* ボタンを押したようなアニメーション */
+                .button a:hover {
+                    /* box-shadowの第1引数、第2引数と同じにしておくといい */
+                    transform: translate3d(0.2rem, 0.2rem, 0);
+                    box-shadow: none;
+                    opacity: 1;
+                    transition: all 0.2s;
+                }
+                /* きらきらする処理 */
+                .button a:before{
+                    content: '';
+                        display: block;
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: -100%;
+                        background-image: linear-gradient( 130deg, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 55%);
+                        /* -webkit-transition: 0.5s; */
+                        transition: 0.6s;
+                }
+                .button a:hover:before {
+                    left: 100%;
+                }
+                .button a:after {
+                    content: '';
+                    width: 5px;
+                    height: 5px;
+                    border-top: 3px solid #fff;
+                    border-right: 3px solid #fff;
+                    transform: rotate(45deg) translateY(-50%);
+                    position: absolute;
+                    top: 50%;
+                    right: 20px;
+                    border-radius: 1px;
+                    transition: 0.3s ease-in-out;
+                }
+            </code>
+        </pre>
+
+        <h1 class="number-title"><span class="number t_normal">9</span>陰影をストライプにしたボタン</h1>
+        <h4>▼htmlの見た目</h4>
+        <div class="button_stripe">
+            <a href="#"><span>ボタンのデザイン</span></a>
+        </div>
+        <p>HTMLも少し変更の必要がある。</p>
+        <h4>▼コード(HTML)</h4>
+        <pre>
+            <code>
+                &lt;div class="button"&gt;
+                    &lt;a href="#"&gt;&lt;span&gt;ボタンのデザイン&lt;/span&gt;&lt;/a&gt;
+                &lt;/div&gt;
+            </code>
+        </pre>
+        <h4>▼コード(CSS)</h4>
+        <pre>
+            <code>
+                .button {
+                    min-width: 240px;
+                    position: relative;
+                    display: inline-block;
+                    padding: 1rem 3rem;
+                    cursor: pointer;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                    -webkit-transition: all 0.3s;
+                    transition: all 0.3s;
+                    text-align: center;
+                    vertical-align: middle;
+                    text-decoration: none;
+                    letter-spacing: 0.1em;
+                    color: #212529;
+                    border-radius: 0.5rem;
+                    margin-bottom: 12px;
+                    padding: 0;
+                    -webkit-transition: all 0.3s;
+                    transition: all 0.3s;
+                }
+
+                .button a {
+                    text-decoration: none;
+                }
+                
+                .button span {
+                    position: relative;
+                    display: block;
+                    padding: 10px 25px;
+                    color: #000;
+                    border: 2px solid #000;
+                    border-radius: 0.5rem;
+                    background: #fff;
+                }
+                
+                .button:before {
+                    position: absolute;
+                    bottom: -8px;
+                    left: 0;
+                    display: block;
+                    width: 100%;
+                    height: 14px;
+                    content: "";
+                    -webkit-transition: all 0.3s;
+                    transition: all 0.3s;
+                    border: 2px solid #000;
+                    border-top: 1px solid #000;
+                    border-radius: 0 0 0.5rem 0.5rem;
+                    /* ストライプの処理 */
+                    background-image: repeating-linear-gradient(
+                        -45deg,
+                        #000,
+                        #000 1px,
+                        transparent 2px,
+                        transparent 5px
+                    );
+                    background-size: 7px 7px;
+                    -webkit-backface-visibility: hidden;
+                    backface-visibility: hidden;
+                }
+                
+                .button:hover {
+                    -webkit-transform: translate(0, 3px);
+                    transform: translate(0, 3px);
+                }
+                
+                .button:hover:before {
+                    bottom: -5px;
+                }
+                
+                .button:active {
+                    -webkit-transform: translate(0, 7px);
+                    transform: translate(0, 7px);
+                }
+                
+                .button:active:before {
+                    bottom: -1px;
+                }
+            </code>
+        </pre>
+    </body>
+</html>

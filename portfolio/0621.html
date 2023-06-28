@@ -298,6 +298,16 @@
         </pre>
         <h4>▼htmlの見た目</h4>
         <a href="../portfolio/0621nav.html" target="_blank">ここ</a>から別ページに飛べます。
+        <p>固定した時に、重なりなどがおかしくなるので、以下のようなコードを記述する。使用する際は、class="nav"等で追加できる。</p>
+        <pre>
+            <code>
+                .nav {
+                    position:relative;
+                    top: 80px;
+                    z-index: -1;
+                }
+            </code>
+        </pre>
 
         <p>ヘッダーはheaderタグで囲むとよい。</p>
         <pre>
@@ -415,6 +425,7 @@
         </pre>
 
         <h1 class="number-title"><span class="number t_normal">4</span>角丸に白抜き文字</h1>
+        <h4>▼htmlの見た目</h4>
         <p class="Kadomaru">見出しの作例</p>
         <h4>▼コード(CSS)</h4>
         <pre>

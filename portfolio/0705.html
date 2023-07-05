@@ -29,6 +29,7 @@
                 <li><a href="0705.html#javascript" class="nolink">JavaScriptで動くサイトを作る</a></li>
                 <li><a href="0705.html#pagetop" class="nolink">ページの一番上に戻るようにしてみる</a></li>
                 <li><a href="0705.html#slider" class="nolink">画像をスライドさせる</a></li>
+                <li><a href="0705.html#gallery" class="nolink">作品のページを整える</a></li>
             </ul>
         </div>
         <hr>
@@ -43,7 +44,7 @@
 
         <a name="responsive"></a>
         <h2>スマホに完全対応する</h2>
-        <p>前回のやつだとすまほに対応しきれていなかったので少し修正しておきます。</p>
+        <p>前回のやつだとスマホに対応しきれていなかったので少し修正しておきます。</p>
         <h4>▼コード(CSS)</h4>
         <pre>
             <code>
@@ -73,7 +74,7 @@
 
         <a name="javascript"></a>
         <h2>JavaScriptで動くサイトを作る</h2>
-        <p>ここからは、おまけコンテンツです。基本的にはこれまでの知識を活かし、サイトを作成してもらいます。</p>
+        <p>ここからは、おまけコンテンツです。JavaScriptを触らなくてもいいという方は、基本的にはこれまでの知識を活かし、サイトを作成してもらいます。</p>
         <h4>▼コード(HTML)</h4>
         <pre>
             <code>
@@ -364,6 +365,485 @@
         </ul>
         <p>今までのスクリプトが反映されていない人は、読み込む順番が間違っている可能性があるので注意。</p>
         <p>基本的には上から読み込まれる。</p>
+        <hr>
+
+        <a name="gallery"></a>
+        <h2>作品のページを整える</h2>
+        <p>私が、学生時代のポートフォリオに使用した、作品ページの作り方です。</p>
+        <h4>▼コード(HTML)</h4>
+        <pre>
+            <code>
+                &lt;section class="gallery"&gt;
+                    &lt;div class="container"&gt;
+                        &lt;!-- ここも個人で改造 --&gt;
+                        &lt;input type="radio" id="All" name="categories" value="All" checked&gt;
+                        &lt;input type="radio" id="sound" name="categories" value="sound"&gt;
+                        &lt;input type="radio" id="event" name="categories" value="event"&gt;
+                        &lt;input type="radio" id="movie" name="categories" value="movie"&gt;
+                        &lt;input type="radio" id="game" name="categories" value="game"&gt;
+                        &lt;input type="radio" id="other" name="categories" value="other"&gt;
+                        &lt;ol class="filters"&gt;
+                            &lt;!-- 上と合わせる --&gt;
+                            &lt;li&gt;&lt;label for="All"&gt;All&lt;/label&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;label for="sound"&gt;サウンド&lt;/label&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;label for="event"&gt;イベント&lt;/label&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;label for="movie"&gt;映像&lt;/label&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;label for="game"&gt;ゲーム&lt;/label&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;label for="other"&gt;その他&lt;/label&gt;&lt;/li&gt;
+                        &lt;/ol&gt;
+                        &lt;ol class="targets"&gt;
+                            &lt;!-- 作品の数に応じて増やす --&gt;
+                            &lt;!-- フィルターに掛かるようにcategoryを変える --&gt;
+                            &lt;li class="target" data-category="sound event study"&gt;
+                                &lt;figure&gt;
+                                    &lt;div class="portfolio-overlay"&gt;
+                                        &lt;a href=""&gt; &lt;img src="画像パス(正方形の画像)" alt=""&gt; &lt;/a&gt;
+                                        &lt;div class="hover-mask"&gt;
+                                            &lt;p&gt;
+                                            &lt;div class="circle"&gt;
+                                                &lt;h2&gt;&lt;a href="画像パス(正方形の画像)"&gt;+&lt;/a&gt;&lt;/h2&gt;
+                                            &lt;/div&gt;
+                            
+                                            &lt;div class="circle"&gt;
+                                                &lt;h2&gt;&lt;a href="作品ページのURL"&gt;≡&lt;/a&gt;&lt;/h2&gt;
+                                            &lt;/div&gt;
+                                            &lt;/p&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;h2 class="target-title"&gt; &lt;a href="作品ページのURL"&gt;作品名&lt;/a&gt; &lt;/h2&gt;
+                                    &lt;ol class="target-categories"&gt;
+                                        &lt;li&gt;&lt;strong class="label label-danger"&gt;Event&lt;/strong&gt;&lt;/li&gt;
+                                        &lt;!-- 下記と同じ書き方で時間を入れる --&gt;
+                                        &lt;time datetime="2023-07-05"&gt;&lt;/time&gt;
+                                    &lt;/ol&gt;
+                                    &lt;figcaption&gt;ラベル名&lt;/figcaption&gt;
+                                    &lt;figcaption&gt;2023/07/05 イベント名&lt;/figcaption&gt;
+                                &lt;/figure&gt;
+                            &lt;/li&gt;
+                            &lt;!-- ここまで --&gt;
+                        &lt;/ol&gt;
+                    &lt;/div&gt;
+                &lt;/section&gt;
+            </code>
+        </pre>
+        <h4>▼コード(CSS)</h4>
+        <pre>
+            <code>
+                .prettifydiv {
+                    font-size: 13px;
+                }
+                img {
+                    display: block;
+                    max-width: 100%;
+                    height: auto;
+                }
+                ol {
+                    list-style: none;
+                }
+                a {
+                    text-decoration: none;
+                    color: inherit;
+                } 
+                .container {
+                    max-width: 1400px;
+                    margin: 0 auto;
+                } 
+                input[type="radio"] {
+                    position: absolute;
+                    left: -9999px;
+                }
+                .filters {
+                    text-align: center;
+                    margin-bottom: 2rem;
+                  }
+                .filters * {
+                    display: inline-block;
+                }
+                .filters label {
+                    text-align: center;
+                    padding: 0.25rem 0.5rem;
+                    margin-bottom: 0.25rem;
+                    min-width: 50px;
+                    line-height: normal;
+                    cursor: pointer;
+                    transition: all 0.2s;
+                    color: #999;
+                }
+                .filters label:hover {
+                    background: #1abc9c;
+                    color: #fff;
+                }
+                .targets {
+                    display: grid;
+                    grid-gap: 1.5rem;
+                    grid-template-columns: repeat(4, 1fr);
+                }
+                .targets .target {
+                    background: #fafafa;
+                    border: 1px solid rgba(0, 0, 0, 0.1);
+                }
+                .targets .target-title {
+                    font-size: 1.2rem;
+                    margin: 0.7rem 0 0.7rem 0;
+                    color: black;
+                }
+                .targets .target-title:hover {
+                    color: #999;
+                }
+                .targets figcaption {
+                    margin-top: 3px;
+                    font-size: 0.75rem;
+                    color: #888;
+                }
+                .targets 
+                .target-categories {
+                    font-size: 0.75rem;
+                    padding-left: 0;
+                }
+                .targets
+                .target-categories * {
+                    display: inline-block;
+                }
+                .targets
+                .target-categories li {
+                    margin-bottom: 0.2rem;
+                }
+                .targets
+                .target-categories a {
+                    padding: 0.2rem 0.5rem;
+                    transition: all 0.1s;
+                    color: #1abc9c;
+                }
+                .targets
+                .target-categories a:hover {
+                    background: #1abc9c;
+                    color: #fff;
+                }
+                /* フィルタリング  */
+                [value="All"]:checked ~ .filters [for="All"],
+                [value="sound"]:checked ~ .filters [for="sound"],
+                [value="event"]:checked ~ .filters [for="event"],
+                [value="movie"]:checked ~ .filters [for="movie"],
+                [value="game"]:checked ~ .filters [for="game"],
+                [value="other"]:checked ~ .filters [for="other"] {
+                    background: #1abc9c;
+                    color: #fff;
+                }
+
+                [value="All"]:checked ~ .targets [data-category] {
+                    display: block;
+                }
+                [value="sound"]:checked ~ .targets .target:not([data-category~="sound"]),
+                [value="event"]:checked ~ .targets .target:not([data-category~="event"]),
+                [value="movie"]:checked ~ .targets .target:not([data-category~="movie"]),
+                [value="game"]:checked ~ .targets .target:not([data-category~="game"]),
+                [value="other"]:checked ~ .targets .target:not([data-category~="other"]) {
+                    display: none;
+                }
+                
+                /* メディアクエリ */
+                @media screen and (max-width: 900px) {
+                    .targets {
+                        grid-template-columns: repeat(3, 1fr);
+                    }
+                }  
+                @media screen and (max-width: 650px) {
+                    html {
+                        font-size: 14px;
+                    }
+                    .targets {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                }
+                  
+                figure {
+                    margin-inline-start: 20px;
+                    margin-inline-end: 20px;
+                } 
+
+                .portfolio-overlay {
+                    cursor: pointer;
+                    max-width: 500px;
+                    position: relative;
+                    width: 100%;
+                }
+                .portfolio-overlay img {
+                    height: auto;
+                    width: 100%;
+                }
+                .hover-mask {
+                    align-items: center;
+                    background: rgba(0, 0, 0, 0.5);
+                    bottom: 0;
+                    color: rgb(0, 0, 0);
+                    display: flex;
+                    height: auto;
+                    justify-content: center;
+                    left: 0;
+                    opacity: 0;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    transition: opacity 0.6s ease;
+                    width: 100%;
+                }
+                .hover-mask:hover {
+                    opacity: 1;
+                }  
+                .hover-mask p {
+                    width: 80%;
+                }
+                  
+                .circle {
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100px;
+                    height: 3vh;
+                    background: #fff;
+                    color: #ccc;
+                    text-decoration: none;
+                    text-align: center;
+                    margin: 10px 10px;
+                    padding: 10px 0;
+                }
+                
+                .label-danger {
+                    background-color: #d9534f;
+                } 
+                .label-primary {
+                    background-color: #337ab7;
+                }
+                .label-warning {
+                    background-color: #f0ad4e;
+                }
+                .label-default {
+                    background-color: #777777;
+                }
+                .label-success {
+                    background-color: #5cb85c;
+                }
+                .label {
+                    display: inline;
+                    padding: 0.2em 0.6em 0.3em;
+                    font-size: 75%;
+                    font-weight: bold;
+                    line-height: 1;
+                    color: #ffffff;
+                    text-align: center;
+                    white-space: nowrap;
+                    vertical-align: baseline;
+                    border-radius: 0.25em;
+                }
+                
+                .button.button-3d {
+                    border-radius: 3px;
+                    border-bottom: 3px solid rgba(0, 0, 0, 0.15);
+                    -webkit-transition: none;
+                    -o-transition: none;
+                    transition: none;
+                }
+                .button.button-rounded {
+                    border-radius: 3px;
+                }
+                .button.button-mini {
+                    padding: 0 14px;
+                    font-size: 11px;
+                    height: 28px;
+                    line-height: 28px;
+                }
+                .portfolio-desc span a {
+                    color: #888;
+                }
+                .button-red {
+                    background-color: #c02942;
+                }
+                .button-blue {
+                    background-color: #1265a8;
+                }
+                .button-green {
+                    background-color: #12a819;
+                }
+                .button-yellow {
+                    background-color: #a6a812;
+                }
+                .button {
+                    display: inline-block;
+                    position: relative;
+                    cursor: pointer;
+                    outline: none;
+                    white-space: nowrap;
+                    margin: 10px 5px;
+                    padding: 0 22px;
+                    font-size: 14px;
+                    height: 40px;
+                    line-height: 40px;
+                    color: #fff;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    border: none;
+                    text-shadow: 1px 1px 1px rgb(0 0 0 / 20%);
+                }
+            </code>
+        </pre>
+        <h4>▼コード(JS)</h4>
+        <p>&lt;time datetime="2023-07-05"&gt;&lt;/time&gt;&lt;/p&gt;が14日以内の時にnewというラベルをつける。
+        <pre>
+            <code>
+                $(function () {
+                    $('time').each(function(){
+                      // 現在日時
+                      var current = new Date();
+                      // 14日前のミリ秒
+                      var range_ms = current.getTime() - (14 * 24 * 60 * 60 * 1000);
+                  
+                      // 更新日時
+                      var modified = new Date($(this).attr('datetime'));
+                      // 更新日時のミリ秒
+                      var modified_ms = modified.getTime();
+                  
+                      if (range_ms &lt; modified_ms){
+                        $(this).after('&lt;li&gt;&lt;strong class="label label-danger"&gt;New&lt;/strong&gt;&lt;/li&gt;');
+                      }
+                    });
+                });
+            </code>
+        </pre>
+        <h4>▼htmlの見た目</h4>
+        <section class="gallery">
+            <div class="container">
+                <!-- ここも個人で改造 -->
+                <input type="radio" id="All" name="categories" value="All" checked>
+                <input type="radio" id="sound" name="categories" value="sound">
+                <input type="radio" id="event" name="categories" value="event">
+                <input type="radio" id="movie" name="categories" value="movie">
+                <input type="radio" id="game" name="categories" value="game">
+                <input type="radio" id="other" name="categories" value="other">
+                <ol class="filters">
+                    <!-- 上と合わせる -->
+                    <li><label for="All">All</label></li>
+                    <li><label for="sound">サウンド</label></li>
+                    <li><label for="event">イベント</label></li>
+                    <li><label for="movie">映像</label></li>
+                    <li><label for="game">ゲーム</label></li>
+                    <li><label for="other">その他</label></li>
+                </ol>
+                <ol class="targets">
+                    <!-- 作品の数に応じて増やす -->
+                    <!-- フィルターに掛かるようにcategoryを変える -->
+                    <li class="target" data-category="event">
+                        <figure>
+                            <div class="portfolio-overlay">
+                                <a href=""> <img src="../portfolio/img/TOP.png" alt=""> </a>
+                                <div class="hover-mask">
+                                    <p>
+                                    <div class="circle">
+                                        <h2><a href="../portfolio/img/TOP.png">+</a></h2>
+                                    </div>
+                    
+                                    <div class="circle">
+                                        <h2><a href="">≡</a></h2>
+                                    </div>
+                                    </p>
+                                </div>
+                            </div>
+                            <h2 class="target-title"> <a href="">作品名</a> </h2>
+                            <ol class="target-categories">
+                                <li><strong class="label label-danger">Event</strong></li>
+                                <!-- 下記と同じ書き方で時間を入れる -->
+                                <time datetime="2023-07-05"></time>
+                            </ol>
+                            <figcaption>ラベル名</figcaption>
+                            <figcaption>2023/07/05 イベント名</figcaption>
+                        </figure>
+                    </li>
+
+                    <li class="target" data-category="sound">
+                        <figure>
+                            <div class="portfolio-overlay">
+                                <a href=""> <img src="../portfolio/img/TOP.png" alt=""> </a>
+                                <div class="hover-mask">
+                                    <p>
+                                    <div class="circle">
+                                        <h2><a href="../portfolio/img/TOP.png">+</a></h2>
+                                    </div>
+                    
+                                    <div class="circle">
+                                        <h2><a href="">≡</a></h2>
+                                    </div>
+                                    </p>
+                                </div>
+                            </div>
+                            <h2 class="target-title"> <a href="">作品名1</a> </h2>
+                            <ol class="target-categories">
+                                <li><strong class="label label-primary">Sound</strong></li>
+                                <!-- 下記と同じ書き方で時間を入れる -->
+                                <time datetime="2023-07-04"></time>
+                            </ol>
+                            <figcaption>ラベル名</figcaption>
+                            <figcaption>2023/07/04 作品名</figcaption>
+                        </figure>
+                    </li>
+
+                    <li class="target" data-category="game">
+                        <figure>
+                            <div class="portfolio-overlay">
+                                <a href=""> <img src="../portfolio/img/TOP.png" alt=""> </a>
+                                <div class="hover-mask">
+                                    <p>
+                                    <div class="circle">
+                                        <h2><a href="../portfolio/img/TOP.png">+</a></h2>
+                                    </div>
+                    
+                                    <div class="circle">
+                                        <h2><a href="">≡</a></h2>
+                                    </div>
+                                    </p>
+                                </div>
+                            </div>
+                            <h2 class="target-title"> <a href="">ゲーム名1</a> </h2>
+                            <ol class="target-categories">
+                                <li><strong class="label label-warning">Game</strong></li>
+                                <!-- 下記と同じ書き方で時間を入れる -->
+                                <time datetime="2023-06-01"></time>
+                            </ol>
+                            <figcaption>ラベル名</figcaption>
+                            <figcaption>2023/06/01 作品名</figcaption>
+                        </figure>
+                    </li>
+
+                    <li class="target" data-category="other">
+                        <figure>
+                            <div class="portfolio-overlay">
+                                <a href=""> <img src="../portfolio/img/TOP.png" alt=""> </a>
+                                <div class="hover-mask">
+                                    <p>
+                                    <div class="circle">
+                                        <h2><a href="../portfolio/img/TOP.png">+</a></h2>
+                                    </div>
+                    
+                                    <div class="circle">
+                                        <h2><a href="">≡</a></h2>
+                                    </div>
+                                    </p>
+                                </div>
+                            </div>
+                            <h2 class="target-title"> <a href="">ゲーム名1</a> </h2>
+                            <ol class="target-categories">
+                                <li><strong class="label label-default">Other</strong></li>
+                                <!-- 下記と同じ書き方で時間を入れる -->
+                                <time datetime="2023-06-01"></time>
+                            </ol>
+                            <figcaption>ラベル名</figcaption>
+                            <figcaption>2023/06/01 その他</figcaption>
+                        </figure>
+                    </li>
+                    <!-- ここまで -->
+                </ol>
+            </div>
+        </section>
         <div id="pagetop" hidden>
             <img src="img/TOP.png" width="80">
         </div>
@@ -373,5 +853,6 @@
         <script src="../portfolio/js/pagetop.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
         <script src="../portfolio/js/slider.js"></script>
+        <script src="../portfolio/js/new.js"></script>
     </body>
 </html>

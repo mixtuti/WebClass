@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <title>ポートフォリオを作成しよう！！</title>
+        <meta charset="UTF-8">
+        <link href="../portfolio/css/style.css" rel="stylesheet" type="text/css">
+        <link href="../portfolio/css/style0705.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+        <!-- Start Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" rel="stylesheet">
+        <!-- End Google Fonts -->
+        <meta name="viewport"
+            content="width=320,
+            height=480,
+            initial-scale=1.0,
+            minimum-scale=1.0,
+            maximum-scale=2.0,
+            user-scalable=yes" />
+    </head>
+    <body>
+        <a name="0705"></a>
+        <div id="0705">
+            <h1>7月5日</h1><br>
+            <hr>
+            <ul>
+                <li><a href="0705.html#responsive" class="nolink">スマホに完全対応する</a></li>
+                <li><a href="0705.html#javascript" class="nolink">JavaScriptで動くサイトを作る</a></li>
+                <li><a href="0705.html#pagetop" class="nolink">ページの一番上に戻るようにしてみる</a></li>
+                <li><a href="0705.html#slider" class="nolink">画像をスライドさせる</a></li>
+            </ul>
+        </div>
+        <hr>
+
+        <a name="info"></a>
+        <h2>今後の授業資料</h2>
+        <h4>▼授業資料閲覧用QRコード</h4>
+        <p>どちらからでもいいのでアクセスして確認しておいてください。</p>
+        <img src="../portfolio/img/QR_701352.png" alt="QRコード"><br>
+        <h3>https://mixtuti.github.io/Webclass/</h3>
+        <hr>
+
+        <a name="responsive"></a>
+        <h2>スマホに完全対応する</h2>
+        <p>前回のやつだとすまほに対応しきれていなかったので少し修正しておきます。</p>
+        <h4>▼コード(CSS)</h4>
+        <pre>
+            <code>
+                @media (max-width: 480px) {
+                    .Two-column {
+                        display: block;
+                    }
+                    .left {
+                        width: 100%;
+                    }
+                    .right {
+                        margin-top: -1rem;
+                        width: 100%;
+                    }
+                }
+            </code>
+        </pre>
+        <div class="Two-column">
+            <div class="left">
+                <p>左側のコンテンツ</p>
+            </div>
+            <div class="right">
+                <p>右側のコンテンツ</p>
+            </div>
+        </div>
+        <hr>
+
+        <a name="javascript"></a>
+        <h2>JavaScriptで動くサイトを作る</h2>
+        <p>ここからは、おまけコンテンツです。基本的にはこれまでの知識を活かし、サイトを作成してもらいます。</p>
+        <h4>▼コード(HTML)</h4>
+        <pre>
+            <code>
+                &lt;!doctype html&gt;
+                    &lt;html&gt;
+                        &lt;head&gt;
+                            &lt;title&gt;ポートフォリオ&lt;/title&gt;
+                        &lt;/head&gt;
+                        &lt;body&gt;
+                            &lt;div id="box" style="display: flex;"&gt;
+                                &lt;div id="blue" style="background-color: blue;"&gt;
+                                    Hello, World
+                                &lt;/div&gt;
+                                &lt;div id="red" style="background-color: red;"&gt;
+                                    こんにちは、世界
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;script src="(対象のJavaScriptファイル)"&gt;&lt;/script&gt;
+                        &lt;/body&gt;
+                    &lt;/html&gt;
+            </code>
+        </pre>
+        <p>JSのコードはbody終了直前に書くのが結構一般的。</p>
+        <p>ボタンを押したら入力した文字をアラートするようにする</p>
+        <h4>▼コード(HTML)</h4>
+        <pre>
+            <code>
+                &lt;div&gt;
+                    &lt;input type="text" id="textBox1" value="テキストを入力してね"&gt;
+                    &lt;button onclick="clickTextBox1()"&gt;決定&lt;/button&gt;
+                &lt;/div&gt;
+            </code>
+        </pre>
+        <h4>▼htmlの見た目</h4>
+        <div>
+            <input type="text" id="textBox1" value="テキストを入力してね">
+            <button onclick="clickTextBox1()">決定</button>
+        </div>
+        <p>このままでは何も起こらないのでスクリプトを書く。</p>
+        <h4>▼コード(JS)</h4>
+        <pre>
+            <code>
+                // 関数名は、 &lt;button onclick="clickTextBox1()"&gt;のonclickの部分
+                    function clickTextBox1(){
+                        // 探索するデータ
+                        //  &lt;input type="text" id="textBox1" value="テキストを入力してね"&gt;のid部分
+                        getTextBox1 = document.getElementById("textBox1");
+                        // 値を取得する
+                        text1 = getTextBox1.value;
+                        // text1の内容をアラーとする
+                        alert(text1);
+                    }
+            </code>
+        </pre>
+        <p>次は、htmlの内容を直接書き換えてみる。</p>
+        <h4>▼コード(HTML)</h4>
+        <pre>
+            <code>
+                &lt;div&gt;
+                    &lt;input type="text" id="textBox2" value="テキストを入力してね"&gt;
+                    &lt;button onclick="clickTextBox2()"&gt;決定&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div id="displayTextBox2"&gt;
+                    変換テスト
+                &lt;/div&gt;
+            </code>
+        </pre>
+        <h4>▼htmlの見た目</h4>
+        <div>
+            <input type="text" id="textBox2" value="テキストを入力してね">
+            <button onclick="clickTextBox2()">決定</button>
+        </div>
+        <div id="displayTextBox2">
+            変換テスト
+        </div>
+        <h4>▼コード(JS)</h4>
+        <pre>
+            <code>
+                // 関数名は、 &lt;button onclick="clickTextBox2()"&gt;のonclickの部分
+                    function clickTextBox2(){
+                        // 探索するデータ
+                        //  &lt;input type="text" id="textBox2" value="テキストを入力してね"&gt;のid部分
+                        getTextBox2 = document.getElementById("textBox2");
+                        // 値を取得する
+                        text2 = getTextBox2.value;
+                        text2 = "ほらね？「" + text2 + "」に変わってるでしょ？";
+                    
+                        DisplayText2 = document.getElementById("displayTextBox2");
+                        // HTMLに流し込む
+                        DisplayText2.innerHTML = text2;
+                    }
+            </code>
+        </pre>
+        <hr>
+
+        <a name="pagetop"></a>
+        <h2>ページの一番上に戻るようにしてみる</h2>
+        <p>今回は普段は見えていなくて、一定の距離スクロールしたら画像が表示され、クリックしたらページの一番上に戻るようにしてみる</p>
+        <h4>▼コード(HTML)</h4>
+        <pre>
+            <code>
+                &lt;div id="pagetop" hidden&gt;
+                    &lt;img src="img/TOP.png" width="80"&gt;
+                &lt;/div&gt;
+            </code>
+        </pre>
+        これをbodyタグの下の方に追加する。
+        <h4>▼コード(CSS)</h4>
+        <pre>
+            <code>
+                #pagetop {
+                    position: fixed;
+                    /* 位置を決める(自由でOK) */
+                    right: 10px;
+                    bottom: 0px;
+                    /* カーソルをポインタに変更 */
+                    cursor: pointer;
+                    /* 常に手前に表示 */
+                    z-index: 10;
+                }
+            </code>
+        </pre>
+        <h4>▼コード(JS)</h4>
+        <pre>
+            <code>
+                $(function(){
+                    var topBtn=$('#pagetop');
+                    topBtn.hide();
+                   
+                    //ボタンの表示設定
+                    $(window).scroll(function(){
+                      if($(this).scrollTop()>600){
+                        //---- 画面を600pxスクロールしたら、ボタンを表示する
+                        topBtn.fadeIn();
+                      }else{
+                        //---- 画面が600pxより上なら、ボタンを表示しない
+                        topBtn.fadeOut();
+                      } 
+                    });
+                   
+                    //ボタンをクリックしたら、スクロールして上に戻る
+                    topBtn.click(function(){
+                        $('body,html').animate({
+                        // スクロールのスピード
+                        scrollTop: 0},500);
+                        return false;
+                    });
+                  });
+            </code>
+        </pre>
+        <p>またこれだけでは、使えないので</p>
+        <pre>
+            <code>
+                &lt;script src="https://code.jquery.com/jquery-3.6.0.min.js"&gt;&lt;/script&gt;
+            </code>
+        </pre>
+        <p>という、jQueryのライブラリを読み込んでください。</p>
+
+        <hr>
+
+        <a name="slider"></a>
+        <h2>画像をスライドさせる</h2>
+        <h4>▼コード(HTML)</h4>
+        <pre>
+            <code>
+                &lt;ul class="slider"&gt;
+                    &lt;li&gt;&lt;img src="画像パス" alt=""&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;img src="画像パス" alt=""&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;img src="画像パス" alt=""&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;img src="画像パス" alt=""&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            </code>
+        </pre>
+        <h4>▼コード(CSS)</h4>
+        <pre>
+            <code>
+                .slider {
+                    width: 94%;
+                    margin: 0 auto;
+                }
+                  
+                .slider img {
+                    width: 60vw;
+                    height: auto;
+                }
+                  
+                .slider 
+                .slick-slide {
+                    transform: scale(0.8);
+                    transition: all 0.5s;
+                    opacity: 0.5;
+                }
+                  
+                .slider
+                .slick-slide.slick-center {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+                  
+                /*矢印の設定*/
+                  
+                /*戻る、次へ矢印の位置*/
+                .slick-prev,
+                .slick-next {
+                    position: absolute;
+                    top: 42%;
+                    cursor: pointer;
+                    outline: none;
+                    border-top: 2px solid #666;
+                    border-right: 2px solid #666;
+                    height: 15px;
+                    width: 15px;
+                }
+                  
+                .slick-prev {
+                    left: -1.5%;
+                    transform: rotate(-135deg);
+                }
+                  
+                .slick-next {
+                    right: -1.5%;
+                    transform: rotate(45deg);
+                }
+                  
+                /*ドットナビゲーションの設定*/
+                  
+                .slick-dots {
+                    text-align: center;
+                    margin: 20px 0 0 0;
+                }
+                  
+                .slick-dots li {
+                    display: inline-block;
+                    margin: 0 5px;
+                }
+                  
+                .slick-dots button {
+                    color: transparent;
+                    outline: none;
+                    width: 8px;
+                    height: 16px;
+                    display: block;
+                    border-radius: 50%;
+                    background: #ccc;
+                }
+                  
+                .slick-dots
+                .slick-active button {
+                    background: #333;
+                }
+            </code>
+        </pre>
+        <h4>▼コード(JS)</h4>
+        <pre>
+            <code>
+                $('.slider').slick(
+                    {
+                        autoplay: true, //自動的に動き出すか。初期値はfalse。
+                        infinite: true, //スライドをループさせるかどうか。初期値はtrue。
+                        speed: 500, //スライドのスピード。初期値は300。
+                        slidesToShow: 3, //スライドを画面に3枚見せる
+                        slidesToScroll: 1, //1回のスクロールで1枚の写真を移動して見せる
+                        prevArrow: '&lt;div class="slick-prev"&gt;&lt;/div&gt;', //矢印部分PreviewのHTMLを変更
+                        nextArrow: '&lt;div class="slick-next"&gt;&lt;/div&gt;', //矢印部分NextのHTMLを変更
+                        centerMode: true, //要素を中央ぞろえにする
+                        variableWidth: true, //幅の違う画像の高さを揃えて表示
+                        dots: true, //下部ドットナビゲーションの表示
+                    }
+                );
+            </code>
+        </pre>
+        <p>これも利用するためにいくつかスクリプトを追加する。</p>
+        <pre>
+            <code>
+                // head要素に追加する。
+                &lt;link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"&gt;
+                // 授業で既に追加済み
+                &lt;script src="https://code.jquery.com/jquery-3.6.0.min.js"&gt;&lt;/script&gt;
+                &lt;script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"&gt;&lt;/script&gt;
+            </code>
+        </pre>
+        <h4>▼htmlの見た目</h4>
+        <ul class="slider">
+            <li><img src="../portfolio/img/CanIUse.png" alt="" width="40%"></li>
+            <li><img src="../portfolio/img/font.png" alt="" width="40%"></li>
+            <li><img src="../portfolio/img/font2.png" alt="" width="40%"></li>
+            <li><img src="../portfolio/img/font3.png" alt="" width="40%"></li>
+        </ul>
+        <p>今までのスクリプトが反映されていない人は、読み込む順番が間違っている可能性があるので注意。</p>
+        <p>基本的には上から読み込まれる。</p>
+        <div id="pagetop" hidden>
+            <img src="img/TOP.png" width="80">
+        </div>
+        <script src="../portfolio/js/alert.js"></script>
+        <script src="../portfolio/js/rewrite.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="../portfolio/js/pagetop.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script src="../portfolio/js/slider.js"></script>
+    </body>
+</html>
